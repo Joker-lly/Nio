@@ -1,9 +1,7 @@
-package com.luban.netty.threedome;
+package com.luban.netty.thirddome;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-
-import java.time.LocalDateTime;
 
 public class TestClientHandler extends SimpleChannelInboundHandler<String> {
     @Override

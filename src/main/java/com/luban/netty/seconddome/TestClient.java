@@ -1,4 +1,4 @@
-package com.luban.netty.twodome;
+package com.luban.netty.seconddome;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;

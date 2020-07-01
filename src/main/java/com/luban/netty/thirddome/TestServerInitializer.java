@@ -1,4 +1,4 @@
-package com.luban.netty.threedome;
+package com.luban.netty.thirddome;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;

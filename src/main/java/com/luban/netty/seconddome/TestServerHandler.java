@@ -1,4 +1,4 @@
-package com.luban.netty.twodome;
+package com.luban.netty.seconddome;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;

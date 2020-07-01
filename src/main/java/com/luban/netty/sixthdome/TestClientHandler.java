@@ -1,4 +1,4 @@
-package com.luban.netty.sixdome;
+package com.luban.netty.sixthdome;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;

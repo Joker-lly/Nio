@@ -1,10 +1,7 @@
-package com.luban.netty.twodome;
+package com.luban.netty.seconddome;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-
-import java.time.LocalDateTime;
-import java.util.UUID;
 
 public class TestClientHandler extends SimpleChannelInboundHandler<String> {
 

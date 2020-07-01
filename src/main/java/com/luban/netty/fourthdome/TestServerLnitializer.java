@@ -1,4 +1,4 @@
-package com.luban.netty.fourdome;
+package com.luban.netty.fourthdome;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
@@ -8,8 +8,6 @@ import io.netty.handler.codec.http.HttpServerCodec;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.stream.ChunkedWriteHandler;
 import io.netty.handler.timeout.IdleStateHandler;
-
-import java.util.concurrent.TimeUnit;
 
 public class TestServerLnitializer extends ChannelInitializer<SocketChannel> {
     @Override

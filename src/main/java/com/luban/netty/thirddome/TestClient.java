@@ -1,4 +1,4 @@
-package com.luban.netty.threedome;
+package com.luban.netty.thirddome;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -9,7 +9,6 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 
 public class TestClient {
     public static void main(String[] args) {
