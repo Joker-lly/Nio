@@ -10,6 +10,7 @@ import io.netty.util.concurrent.GlobalEventExecutor;
 
 public class TestServerHandler extends SimpleChannelInboundHandler<String>{
 
+     // 直译 通道组
     private static ChannelGroup group=new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
 
     //channel读取数据
@@ -17,17 +18,20 @@ public class TestServerHandler extends SimpleChannelInboundHandler<String>{
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, String s) throws Exception {
         Channel channel = channelHandlerContext.channel();
         group.forEach(ch->{
+            //  不发送给自己
             if(channel!=ch){
                 ch.writeAndFlush(channel.remoteAddress()+"："+s+"\r\n");
             }
         });
+        // 向下传播 传播给下一个handler
         channelHandlerContext.fireChannelRead(s);
     }
 
-    //channel 助手类(拦截器)的添加
+    //channel 助手类(拦截器)的添加 用户一旦来连接 就会调用此方法 创建一个新的 channel 添加 新的pipeline
     @Override
     public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
         Channel channel = ctx.channel();
+        //  这行代码的意思是 发送给在这个group中的成员  这两行代码顺序如果调换一下的话 就会发给自己， 有待实践证明
         group.writeAndFlush(channel.remoteAddress()+"加入\n");
         group.add(channel);
     }
