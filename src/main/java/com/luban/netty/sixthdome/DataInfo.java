@@ -3,3793 +3,4083 @@
 
 package com.luban.netty.sixthdome;
 
+import com.google.protobuf.*;
+
 public final class DataInfo {
-  private DataInfo() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
-
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface MyObjectOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.luban.protobuf.MyObject)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>required .com.luban.protobuf.MyObject.DataType data_type = 1;</code>
-     */
-    boolean hasDataType();
-    /**
-     * <code>required .com.luban.protobuf.MyObject.DataType data_type = 1;</code>
-     */
-    MyObject.DataType getDataType();
-
-    /**
-     * <code>optional .com.luban.protobuf.Student student = 2;</code>
-     */
-    boolean hasStudent();
-    /**
-     * <code>optional .com.luban.protobuf.Student student = 2;</code>
-     */
-    Student getStudent();
-    /**
-     * <code>optional .com.luban.protobuf.Student student = 2;</code>
-     */
-    StudentOrBuilder getStudentOrBuilder();
-
-    /**
-     * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
-     */
-    boolean hasTeacher();
-    /**
-     * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
-     */
-    Teacher getTeacher();
-    /**
-     * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
-     */
-    TeacherOrBuilder getTeacherOrBuilder();
-
-    /**
-     * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
-     */
-    boolean hasPatriarch();
-    /**
-     * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
-     */
-    Patriarch getPatriarch();
-    /**
-     * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
-     */
-    PatriarchOrBuilder getPatriarchOrBuilder();
-
-    public MyObject.DataBodyCase getDataBodyCase();
-  }
-  /**
-   * Protobuf type {@code com.luban.protobuf.MyObject}
-   */
-  public  static final class MyObject extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.luban.protobuf.MyObject)
-      MyObjectOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use MyObject.newBuilder() to construct.
-    private MyObject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private MyObject() {
-      dataType_ = 0;
+    private DataInfo() {
     }
 
-    @Override
-    @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new MyObject();
+    public static void registerAllExtensions(
+             ExtensionRegistryLite registry) {
     }
 
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private MyObject(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              int rawValue = input.readEnum();
-                @SuppressWarnings("deprecation")
-              DataType value = DataType.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(1, rawValue);
-              } else {
-                bitField0_ |= 0x00000001;
-                dataType_ = rawValue;
-              }
-              break;
-            }
-            case 18: {
-              Student.Builder subBuilder = null;
-              if (dataBodyCase_ == 2) {
-                subBuilder = ((Student) dataBody_).toBuilder();
-              }
-              dataBody_ =
-                  input.readMessage(Student.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((Student) dataBody_);
-                dataBody_ = subBuilder.buildPartial();
-              }
-              dataBodyCase_ = 2;
-              break;
-            }
-            case 26: {
-              Teacher.Builder subBuilder = null;
-              if (dataBodyCase_ == 3) {
-                subBuilder = ((Teacher) dataBody_).toBuilder();
-              }
-              dataBody_ =
-                  input.readMessage(Teacher.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((Teacher) dataBody_);
-                dataBody_ = subBuilder.buildPartial();
-              }
-              dataBodyCase_ = 3;
-              break;
-            }
-            case 34: {
-              Patriarch.Builder subBuilder = null;
-              if (dataBodyCase_ == 4) {
-                subBuilder = ((Patriarch) dataBody_).toBuilder();
-              }
-              dataBody_ =
-                  input.readMessage(Patriarch.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((Patriarch) dataBody_);
-                dataBody_ = subBuilder.buildPartial();
-              }
-              dataBodyCase_ = 4;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return DataInfo.internal_static_com_luban_protobuf_MyObject_descriptor;
+    public static void registerAllExtensions(
+             ExtensionRegistry registry) {
+        registerAllExtensions(
+                ( ExtensionRegistryLite) registry);
     }
 
-    @Override
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return DataInfo.internal_static_com_luban_protobuf_MyObject_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              MyObject.class, Builder.class);
+    public interface MyObjectOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.luban.protobuf.MyObject)
+             MessageOrBuilder {
+
+        /**
+         * <code>required .com.luban.protobuf.MyObject.DataType data_type = 1;</code>
+         */
+        boolean hasDataType();
+
+        /**
+         * <code>required .com.luban.protobuf.MyObject.DataType data_type = 1;</code>
+         */
+        MyObject.DataType getDataType();
+
+        /**
+         * <code>optional .com.luban.protobuf.Student student = 2;</code>
+         */
+        boolean hasStudent();
+
+        /**
+         * <code>optional .com.luban.protobuf.Student student = 2;</code>
+         */
+        Student getStudent();
+
+        /**
+         * <code>optional .com.luban.protobuf.Student student = 2;</code>
+         */
+        StudentOrBuilder getStudentOrBuilder();
+
+        /**
+         * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
+         */
+        boolean hasTeacher();
+
+        /**
+         * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
+         */
+        Teacher getTeacher();
+
+        /**
+         * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
+         */
+        TeacherOrBuilder getTeacherOrBuilder();
+
+        /**
+         * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
+         */
+        boolean hasPatriarch();
+
+        /**
+         * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
+         */
+        Patriarch getPatriarch();
+
+        /**
+         * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
+         */
+        PatriarchOrBuilder getPatriarchOrBuilder();
+
+        public MyObject.DataBodyCase getDataBodyCase();
     }
 
-    /**
-     * Protobuf enum {@code com.luban.protobuf.MyObject.DataType}
-     */
-    public enum DataType
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>StudentType = 0;</code>
-       */
-      StudentType(0),
-      /**
-       * <code>TeacherType = 1;</code>
-       */
-      TeacherType(1),
-      /**
-       * <code>PatriarchType = 2;</code>
-       */
-      PatriarchType(2),
-      ;
-
-      /**
-       * <code>StudentType = 0;</code>
-       */
-      public static final int StudentType_VALUE = 0;
-      /**
-       * <code>TeacherType = 1;</code>
-       */
-      public static final int TeacherType_VALUE = 1;
-      /**
-       * <code>PatriarchType = 2;</code>
-       */
-      public static final int PatriarchType_VALUE = 2;
-
-
-      public final int getNumber() {
-        return value;
-      }
-
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @Deprecated
-      public static DataType valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static DataType forNumber(int value) {
-        switch (value) {
-          case 0: return StudentType;
-          case 1: return TeacherType;
-          case 2: return PatriarchType;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<DataType>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          DataType> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<DataType>() {
-              public DataType findValueByNumber(int number) {
-                return DataType.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return MyObject.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final DataType[] VALUES = values();
-
-      public static DataType valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private DataType(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:com.luban.protobuf.MyObject.DataType)
-    }
-
-    private int bitField0_;
-    private int dataBodyCase_ = 0;
-    private Object dataBody_;
-    public enum DataBodyCase
-        implements com.google.protobuf.Internal.EnumLite {
-      STUDENT(2),
-      TEACHER(3),
-      PATRIARCH(4),
-      DATABODY_NOT_SET(0);
-      private final int value;
-      private DataBodyCase(int value) {
-        this.value = value;
-      }
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @Deprecated
-      public static DataBodyCase valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static DataBodyCase forNumber(int value) {
-        switch (value) {
-          case 2: return STUDENT;
-          case 3: return TEACHER;
-          case 4: return PATRIARCH;
-          case 0: return DATABODY_NOT_SET;
-          default: return null;
-        }
-      }
-      public int getNumber() {
-        return this.value;
-      }
-    };
-
-    public DataBodyCase
-    getDataBodyCase() {
-      return DataBodyCase.forNumber(
-          dataBodyCase_);
-    }
-
-    public static final int DATA_TYPE_FIELD_NUMBER = 1;
-    private int dataType_;
-    /**
-     * <code>required .com.luban.protobuf.MyObject.DataType data_type = 1;</code>
-     */
-    public boolean hasDataType() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>required .com.luban.protobuf.MyObject.DataType data_type = 1;</code>
-     */
-    public DataType getDataType() {
-      @SuppressWarnings("deprecation")
-      DataType result = DataType.valueOf(dataType_);
-      return result == null ? DataType.StudentType : result;
-    }
-
-    public static final int STUDENT_FIELD_NUMBER = 2;
-    /**
-     * <code>optional .com.luban.protobuf.Student student = 2;</code>
-     */
-    public boolean hasStudent() {
-      return dataBodyCase_ == 2;
-    }
-    /**
-     * <code>optional .com.luban.protobuf.Student student = 2;</code>
-     */
-    public Student getStudent() {
-      if (dataBodyCase_ == 2) {
-         return (Student) dataBody_;
-      }
-      return Student.getDefaultInstance();
-    }
-    /**
-     * <code>optional .com.luban.protobuf.Student student = 2;</code>
-     */
-    public StudentOrBuilder getStudentOrBuilder() {
-      if (dataBodyCase_ == 2) {
-         return (Student) dataBody_;
-      }
-      return Student.getDefaultInstance();
-    }
-
-    public static final int TEACHER_FIELD_NUMBER = 3;
-    /**
-     * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
-     */
-    public boolean hasTeacher() {
-      return dataBodyCase_ == 3;
-    }
-    /**
-     * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
-     */
-    public Teacher getTeacher() {
-      if (dataBodyCase_ == 3) {
-         return (Teacher) dataBody_;
-      }
-      return Teacher.getDefaultInstance();
-    }
-    /**
-     * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
-     */
-    public TeacherOrBuilder getTeacherOrBuilder() {
-      if (dataBodyCase_ == 3) {
-         return (Teacher) dataBody_;
-      }
-      return Teacher.getDefaultInstance();
-    }
-
-    public static final int PATRIARCH_FIELD_NUMBER = 4;
-    /**
-     * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
-     */
-    public boolean hasPatriarch() {
-      return dataBodyCase_ == 4;
-    }
-    /**
-     * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
-     */
-    public Patriarch getPatriarch() {
-      if (dataBodyCase_ == 4) {
-         return (Patriarch) dataBody_;
-      }
-      return Patriarch.getDefaultInstance();
-    }
-    /**
-     * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
-     */
-    public PatriarchOrBuilder getPatriarchOrBuilder() {
-      if (dataBodyCase_ == 4) {
-         return (Patriarch) dataBody_;
-      }
-      return Patriarch.getDefaultInstance();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      if (!hasDataType()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeEnum(1, dataType_);
-      }
-      if (dataBodyCase_ == 2) {
-        output.writeMessage(2, (Student) dataBody_);
-      }
-      if (dataBodyCase_ == 3) {
-        output.writeMessage(3, (Teacher) dataBody_);
-      }
-      if (dataBodyCase_ == 4) {
-        output.writeMessage(4, (Patriarch) dataBody_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, dataType_);
-      }
-      if (dataBodyCase_ == 2) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (Student) dataBody_);
-      }
-      if (dataBodyCase_ == 3) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (Teacher) dataBody_);
-      }
-      if (dataBodyCase_ == 4) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, (Patriarch) dataBody_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof MyObject)) {
-        return super.equals(obj);
-      }
-      MyObject other = (MyObject) obj;
-
-      if (hasDataType() != other.hasDataType()) return false;
-      if (hasDataType()) {
-        if (dataType_ != other.dataType_) return false;
-      }
-      if (!getDataBodyCase().equals(other.getDataBodyCase())) return false;
-      switch (dataBodyCase_) {
-        case 2:
-          if (!getStudent()
-              .equals(other.getStudent())) return false;
-          break;
-        case 3:
-          if (!getTeacher()
-              .equals(other.getTeacher())) return false;
-          break;
-        case 4:
-          if (!getPatriarch()
-              .equals(other.getPatriarch())) return false;
-          break;
-        case 0:
-        default:
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasDataType()) {
-        hash = (37 * hash) + DATA_TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + dataType_;
-      }
-      switch (dataBodyCase_) {
-        case 2:
-          hash = (37 * hash) + STUDENT_FIELD_NUMBER;
-          hash = (53 * hash) + getStudent().hashCode();
-          break;
-        case 3:
-          hash = (37 * hash) + TEACHER_FIELD_NUMBER;
-          hash = (53 * hash) + getTeacher().hashCode();
-          break;
-        case 4:
-          hash = (37 * hash) + PATRIARCH_FIELD_NUMBER;
-          hash = (53 * hash) + getPatriarch().hashCode();
-          break;
-        case 0:
-        default:
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static MyObject parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static MyObject parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static MyObject parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static MyObject parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static MyObject parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static MyObject parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static MyObject parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static MyObject parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static MyObject parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static MyObject parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static MyObject parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static MyObject parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(MyObject prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.luban.protobuf.MyObject}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.luban.protobuf.MyObject)
-        MyObjectOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return DataInfo.internal_static_com_luban_protobuf_MyObject_descriptor;
-      }
+    public static final class MyObject extends
+            GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.luban.protobuf.MyObject)
+            MyObjectOrBuilder {
+        private static final long serialVersionUID = 0L;
 
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return DataInfo.internal_static_com_luban_protobuf_MyObject_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                MyObject.class, Builder.class);
-      }
+        // Use MyObject.newBuilder() to construct.
+        private MyObject(GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
+        }
 
-      // Construct using com.luban.netty.sixdome.DataInfo.MyObject.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
+        private MyObject() {
+            dataType_ = 0;
+        }
 
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        @Override
+        @SuppressWarnings({"unused"})
+        protected Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new MyObject();
         }
-      }
-      @Override
-      public Builder clear() {
-        super.clear();
-        dataType_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        dataBodyCase_ = 0;
-        dataBody_ = null;
-        return this;
-      }
 
-      @Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return DataInfo.internal_static_com_luban_protobuf_MyObject_descriptor;
-      }
+        @Override
+        public final  UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
 
-      @Override
-      public MyObject getDefaultInstanceForType() {
-        return MyObject.getDefaultInstance();
-      }
+        private MyObject(
+                CodedInputStream input,
+                ExtensionRegistryLite extensionRegistry)
+                throws InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
+            }
+            int mutable_bitField0_ = 0;
+            UnknownFieldSet.Builder unknownFields = UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8: {
+                            int rawValue = input.readEnum();
+                            @SuppressWarnings("deprecation")
+                            DataType value = DataType.valueOf(rawValue);
+                            if (value == null) {
+                                unknownFields.mergeVarintField(1, rawValue);
+                            } else {
+                                bitField0_ |= 0x00000001;
+                                dataType_ = rawValue;
+                            }
+                            break;
+                        }
+                        case 18: {
+                            Student.Builder subBuilder = null;
+                            if (dataBodyCase_ == 2) {
+                                subBuilder = ((Student) dataBody_).toBuilder();
+                            }
+                            dataBody_ =
+                                    input.readMessage(Student.PARSER, extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom((Student) dataBody_);
+                                dataBody_ = subBuilder.buildPartial();
+                            }
+                            dataBodyCase_ = 2;
+                            break;
+                        }
+                        case 26: {
+                            Teacher.Builder subBuilder = null;
+                            if (dataBodyCase_ == 3) {
+                                subBuilder = ((Teacher) dataBody_).toBuilder();
+                            }
+                            dataBody_ =
+                                    input.readMessage(Teacher.PARSER, extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom((Teacher) dataBody_);
+                                dataBody_ = subBuilder.buildPartial();
+                            }
+                            dataBodyCase_ = 3;
+                            break;
+                        }
+                        case 34: {
+                            Patriarch.Builder subBuilder = null;
+                            if (dataBodyCase_ == 4) {
+                                subBuilder = ((Patriarch) dataBody_).toBuilder();
+                            }
+                            dataBody_ =
+                                    input.readMessage(Patriarch.PARSER, extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom((Patriarch) dataBody_);
+                                dataBody_ = subBuilder.buildPartial();
+                            }
+                            dataBodyCase_ = 4;
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch ( InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new  InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
 
-      @Override
-      public MyObject build() {
-        MyObject result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        public static final  Descriptors.Descriptor
+        getDescriptor() {
+            return DataInfo.internal_static_com_luban_protobuf_MyObject_descriptor;
         }
-        return result;
-      }
 
-      @Override
-      public MyObject buildPartial() {
-        MyObject result = new MyObject(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          to_bitField0_ |= 0x00000001;
+        @Override
+        protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return DataInfo.internal_static_com_luban_protobuf_MyObject_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            MyObject.class, Builder.class);
         }
-        result.dataType_ = dataType_;
-        if (dataBodyCase_ == 2) {
-          if (studentBuilder_ == null) {
-            result.dataBody_ = dataBody_;
-          } else {
-            result.dataBody_ = studentBuilder_.build();
-          }
-        }
-        if (dataBodyCase_ == 3) {
-          if (teacherBuilder_ == null) {
-            result.dataBody_ = dataBody_;
-          } else {
-            result.dataBody_ = teacherBuilder_.build();
-          }
-        }
-        if (dataBodyCase_ == 4) {
-          if (patriarchBuilder_ == null) {
-            result.dataBody_ = dataBody_;
-          } else {
-            result.dataBody_ = patriarchBuilder_.build();
-          }
-        }
-        result.bitField0_ = to_bitField0_;
-        result.dataBodyCase_ = dataBodyCase_;
-        onBuilt();
-        return result;
-      }
 
-      @Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.setField(field, value);
-      }
-      @Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof MyObject) {
-          return mergeFrom((MyObject)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
+        /**
+         * Protobuf enum {@code com.luban.protobuf.MyObject.DataType}
+         */
+        public enum DataType
+                implements  ProtocolMessageEnum {
+            /**
+             * <code>StudentType = 0;</code>
+             */
+            StudentType(0),
+            /**
+             * <code>TeacherType = 1;</code>
+             */
+            TeacherType(1),
+            /**
+             * <code>PatriarchType = 2;</code>
+             */
+            PatriarchType(2),
+            ;
 
-      public Builder mergeFrom(MyObject other) {
-        if (other == MyObject.getDefaultInstance()) return this;
-        if (other.hasDataType()) {
-          setDataType(other.getDataType());
-        }
-        switch (other.getDataBodyCase()) {
-          case STUDENT: {
-            mergeStudent(other.getStudent());
-            break;
-          }
-          case TEACHER: {
-            mergeTeacher(other.getTeacher());
-            break;
-          }
-          case PATRIARCH: {
-            mergePatriarch(other.getPatriarch());
-            break;
-          }
-          case DATABODY_NOT_SET: {
-            break;
-          }
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @Override
-      public final boolean isInitialized() {
-        if (!hasDataType()) {
-          return false;
-        }
-        return true;
-      }
-
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        MyObject parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (MyObject) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int dataBodyCase_ = 0;
-      private Object dataBody_;
-      public DataBodyCase
-          getDataBodyCase() {
-        return DataBodyCase.forNumber(
-            dataBodyCase_);
-      }
-
-      public Builder clearDataBody() {
-        dataBodyCase_ = 0;
-        dataBody_ = null;
-        onChanged();
-        return this;
-      }
-
-      private int bitField0_;
-
-      private int dataType_ = 0;
-      /**
-       * <code>required .com.luban.protobuf.MyObject.DataType data_type = 1;</code>
-       */
-      public boolean hasDataType() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>required .com.luban.protobuf.MyObject.DataType data_type = 1;</code>
-       */
-      public DataType getDataType() {
-        @SuppressWarnings("deprecation")
-        DataType result = DataType.valueOf(dataType_);
-        return result == null ? DataType.StudentType : result;
-      }
-      /**
-       * <code>required .com.luban.protobuf.MyObject.DataType data_type = 1;</code>
-       */
-      public Builder setDataType(DataType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000001;
-        dataType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required .com.luban.protobuf.MyObject.DataType data_type = 1;</code>
-       */
-      public Builder clearDataType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        dataType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          Student, Student.Builder, StudentOrBuilder> studentBuilder_;
-      /**
-       * <code>optional .com.luban.protobuf.Student student = 2;</code>
-       */
-      public boolean hasStudent() {
-        return dataBodyCase_ == 2;
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Student student = 2;</code>
-       */
-      public Student getStudent() {
-        if (studentBuilder_ == null) {
-          if (dataBodyCase_ == 2) {
-            return (Student) dataBody_;
-          }
-          return Student.getDefaultInstance();
-        } else {
-          if (dataBodyCase_ == 2) {
-            return studentBuilder_.getMessage();
-          }
-          return Student.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Student student = 2;</code>
-       */
-      public Builder setStudent(Student value) {
-        if (studentBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          dataBody_ = value;
-          onChanged();
-        } else {
-          studentBuilder_.setMessage(value);
-        }
-        dataBodyCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Student student = 2;</code>
-       */
-      public Builder setStudent(
-          Student.Builder builderForValue) {
-        if (studentBuilder_ == null) {
-          dataBody_ = builderForValue.build();
-          onChanged();
-        } else {
-          studentBuilder_.setMessage(builderForValue.build());
-        }
-        dataBodyCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Student student = 2;</code>
-       */
-      public Builder mergeStudent(Student value) {
-        if (studentBuilder_ == null) {
-          if (dataBodyCase_ == 2 &&
-              dataBody_ != Student.getDefaultInstance()) {
-            dataBody_ = Student.newBuilder((Student) dataBody_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            dataBody_ = value;
-          }
-          onChanged();
-        } else {
-          if (dataBodyCase_ == 2) {
-            studentBuilder_.mergeFrom(value);
-          }
-          studentBuilder_.setMessage(value);
-        }
-        dataBodyCase_ = 2;
-        return this;
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Student student = 2;</code>
-       */
-      public Builder clearStudent() {
-        if (studentBuilder_ == null) {
-          if (dataBodyCase_ == 2) {
-            dataBodyCase_ = 0;
-            dataBody_ = null;
-            onChanged();
-          }
-        } else {
-          if (dataBodyCase_ == 2) {
-            dataBodyCase_ = 0;
-            dataBody_ = null;
-          }
-          studentBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Student student = 2;</code>
-       */
-      public Student.Builder getStudentBuilder() {
-        return getStudentFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Student student = 2;</code>
-       */
-      public StudentOrBuilder getStudentOrBuilder() {
-        if ((dataBodyCase_ == 2) && (studentBuilder_ != null)) {
-          return studentBuilder_.getMessageOrBuilder();
-        } else {
-          if (dataBodyCase_ == 2) {
-            return (Student) dataBody_;
-          }
-          return Student.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Student student = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          Student, Student.Builder, StudentOrBuilder>
-          getStudentFieldBuilder() {
-        if (studentBuilder_ == null) {
-          if (!(dataBodyCase_ == 2)) {
-            dataBody_ = Student.getDefaultInstance();
-          }
-          studentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              Student, Student.Builder, StudentOrBuilder>(
-                  (Student) dataBody_,
-                  getParentForChildren(),
-                  isClean());
-          dataBody_ = null;
-        }
-        dataBodyCase_ = 2;
-        onChanged();;
-        return studentBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          Teacher, Teacher.Builder, TeacherOrBuilder> teacherBuilder_;
-      /**
-       * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
-       */
-      public boolean hasTeacher() {
-        return dataBodyCase_ == 3;
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
-       */
-      public Teacher getTeacher() {
-        if (teacherBuilder_ == null) {
-          if (dataBodyCase_ == 3) {
-            return (Teacher) dataBody_;
-          }
-          return Teacher.getDefaultInstance();
-        } else {
-          if (dataBodyCase_ == 3) {
-            return teacherBuilder_.getMessage();
-          }
-          return Teacher.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
-       */
-      public Builder setTeacher(Teacher value) {
-        if (teacherBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          dataBody_ = value;
-          onChanged();
-        } else {
-          teacherBuilder_.setMessage(value);
-        }
-        dataBodyCase_ = 3;
-        return this;
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
-       */
-      public Builder setTeacher(
-          Teacher.Builder builderForValue) {
-        if (teacherBuilder_ == null) {
-          dataBody_ = builderForValue.build();
-          onChanged();
-        } else {
-          teacherBuilder_.setMessage(builderForValue.build());
-        }
-        dataBodyCase_ = 3;
-        return this;
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
-       */
-      public Builder mergeTeacher(Teacher value) {
-        if (teacherBuilder_ == null) {
-          if (dataBodyCase_ == 3 &&
-              dataBody_ != Teacher.getDefaultInstance()) {
-            dataBody_ = Teacher.newBuilder((Teacher) dataBody_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            dataBody_ = value;
-          }
-          onChanged();
-        } else {
-          if (dataBodyCase_ == 3) {
-            teacherBuilder_.mergeFrom(value);
-          }
-          teacherBuilder_.setMessage(value);
-        }
-        dataBodyCase_ = 3;
-        return this;
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
-       */
-      public Builder clearTeacher() {
-        if (teacherBuilder_ == null) {
-          if (dataBodyCase_ == 3) {
-            dataBodyCase_ = 0;
-            dataBody_ = null;
-            onChanged();
-          }
-        } else {
-          if (dataBodyCase_ == 3) {
-            dataBodyCase_ = 0;
-            dataBody_ = null;
-          }
-          teacherBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
-       */
-      public Teacher.Builder getTeacherBuilder() {
-        return getTeacherFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
-       */
-      public TeacherOrBuilder getTeacherOrBuilder() {
-        if ((dataBodyCase_ == 3) && (teacherBuilder_ != null)) {
-          return teacherBuilder_.getMessageOrBuilder();
-        } else {
-          if (dataBodyCase_ == 3) {
-            return (Teacher) dataBody_;
-          }
-          return Teacher.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          Teacher, Teacher.Builder, TeacherOrBuilder>
-          getTeacherFieldBuilder() {
-        if (teacherBuilder_ == null) {
-          if (!(dataBodyCase_ == 3)) {
-            dataBody_ = Teacher.getDefaultInstance();
-          }
-          teacherBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              Teacher, Teacher.Builder, TeacherOrBuilder>(
-                  (Teacher) dataBody_,
-                  getParentForChildren(),
-                  isClean());
-          dataBody_ = null;
-        }
-        dataBodyCase_ = 3;
-        onChanged();;
-        return teacherBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          Patriarch, Patriarch.Builder, PatriarchOrBuilder> patriarchBuilder_;
-      /**
-       * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
-       */
-      public boolean hasPatriarch() {
-        return dataBodyCase_ == 4;
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
-       */
-      public Patriarch getPatriarch() {
-        if (patriarchBuilder_ == null) {
-          if (dataBodyCase_ == 4) {
-            return (Patriarch) dataBody_;
-          }
-          return Patriarch.getDefaultInstance();
-        } else {
-          if (dataBodyCase_ == 4) {
-            return patriarchBuilder_.getMessage();
-          }
-          return Patriarch.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
-       */
-      public Builder setPatriarch(Patriarch value) {
-        if (patriarchBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          dataBody_ = value;
-          onChanged();
-        } else {
-          patriarchBuilder_.setMessage(value);
-        }
-        dataBodyCase_ = 4;
-        return this;
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
-       */
-      public Builder setPatriarch(
-          Patriarch.Builder builderForValue) {
-        if (patriarchBuilder_ == null) {
-          dataBody_ = builderForValue.build();
-          onChanged();
-        } else {
-          patriarchBuilder_.setMessage(builderForValue.build());
-        }
-        dataBodyCase_ = 4;
-        return this;
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
-       */
-      public Builder mergePatriarch(Patriarch value) {
-        if (patriarchBuilder_ == null) {
-          if (dataBodyCase_ == 4 &&
-              dataBody_ != Patriarch.getDefaultInstance()) {
-            dataBody_ = Patriarch.newBuilder((Patriarch) dataBody_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            dataBody_ = value;
-          }
-          onChanged();
-        } else {
-          if (dataBodyCase_ == 4) {
-            patriarchBuilder_.mergeFrom(value);
-          }
-          patriarchBuilder_.setMessage(value);
-        }
-        dataBodyCase_ = 4;
-        return this;
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
-       */
-      public Builder clearPatriarch() {
-        if (patriarchBuilder_ == null) {
-          if (dataBodyCase_ == 4) {
-            dataBodyCase_ = 0;
-            dataBody_ = null;
-            onChanged();
-          }
-        } else {
-          if (dataBodyCase_ == 4) {
-            dataBodyCase_ = 0;
-            dataBody_ = null;
-          }
-          patriarchBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
-       */
-      public Patriarch.Builder getPatriarchBuilder() {
-        return getPatriarchFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
-       */
-      public PatriarchOrBuilder getPatriarchOrBuilder() {
-        if ((dataBodyCase_ == 4) && (patriarchBuilder_ != null)) {
-          return patriarchBuilder_.getMessageOrBuilder();
-        } else {
-          if (dataBodyCase_ == 4) {
-            return (Patriarch) dataBody_;
-          }
-          return Patriarch.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          Patriarch, Patriarch.Builder, PatriarchOrBuilder>
-          getPatriarchFieldBuilder() {
-        if (patriarchBuilder_ == null) {
-          if (!(dataBodyCase_ == 4)) {
-            dataBody_ = Patriarch.getDefaultInstance();
-          }
-          patriarchBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              Patriarch, Patriarch.Builder, PatriarchOrBuilder>(
-                  (Patriarch) dataBody_,
-                  getParentForChildren(),
-                  isClean());
-          dataBody_ = null;
-        }
-        dataBodyCase_ = 4;
-        onChanged();;
-        return patriarchBuilder_;
-      }
-      @Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+            /**
+             * <code>StudentType = 0;</code>
+             */
+            public static final int StudentType_VALUE = 0;
+            /**
+             * <code>TeacherType = 1;</code>
+             */
+            public static final int TeacherType_VALUE = 1;
+            /**
+             * <code>PatriarchType = 2;</code>
+             */
+            public static final int PatriarchType_VALUE = 2;
 
 
-      // @@protoc_insertion_point(builder_scope:com.luban.protobuf.MyObject)
+            public final int getNumber() {
+                return value;
+            }
+
+            /**
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @Deprecated
+            public static DataType valueOf(int value) {
+                return forNumber(value);
+            }
+
+            public static DataType forNumber(int value) {
+                switch (value) {
+                    case 0:
+                        return StudentType;
+                    case 1:
+                        return TeacherType;
+                    case 2:
+                        return PatriarchType;
+                    default:
+                        return null;
+                }
+            }
+
+            public static  Internal.EnumLiteMap<DataType>
+            internalGetValueMap() {
+                return internalValueMap;
+            }
+
+            private static final  Internal.EnumLiteMap<
+                    DataType> internalValueMap =
+                    new  Internal.EnumLiteMap<DataType>() {
+                        public DataType findValueByNumber(int number) {
+                            return DataType.forNumber(number);
+                        }
+                    };
+
+            public final Descriptors.EnumValueDescriptor
+            getValueDescriptor() {
+                return getDescriptor().getValues().get(ordinal());
+            }
+
+            public final  Descriptors.EnumDescriptor
+            getDescriptorForType() {
+                return getDescriptor();
+            }
+
+            public static final Descriptors.EnumDescriptor
+            getDescriptor() {
+                return MyObject.getDescriptor().getEnumTypes().get(0);
+            }
+
+            private static final DataType[] VALUES = values();
+
+            public static DataType valueOf(
+                     Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                    throw new IllegalArgumentException(
+                            "EnumValueDescriptor is not for this type.");
+                }
+                return VALUES[desc.getIndex()];
+            }
+
+            private final int value;
+
+            private DataType(int value) {
+                this.value = value;
+            }
+
+            // @@protoc_insertion_point(enum_scope:com.luban.protobuf.MyObject.DataType)
+        }
+
+        private int bitField0_;
+        private int dataBodyCase_ = 0;
+        private Object dataBody_;
+
+        public enum DataBodyCase implements  Internal.EnumLite {
+            STUDENT(2),
+            TEACHER(3),
+            PATRIARCH(4),
+            DATABODY_NOT_SET(0);
+            private final int value;
+
+            private DataBodyCase(int value) {
+                this.value = value;
+            }
+
+            /**
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @Deprecated
+            public static DataBodyCase valueOf(int value) {
+                return forNumber(value);
+            }
+
+            public static DataBodyCase forNumber(int value) {
+                switch (value) {
+                    case 2:
+                        return STUDENT;
+                    case 3:
+                        return TEACHER;
+                    case 4:
+                        return PATRIARCH;
+                    case 0:
+                        return DATABODY_NOT_SET;
+                    default:
+                        return null;
+                }
+            }
+
+            public int getNumber() {
+                return this.value;
+            }
+        };
+
+        public DataBodyCase
+        getDataBodyCase() {
+            return DataBodyCase.forNumber(
+                    dataBodyCase_);
+        }
+
+        public static final int DATA_TYPE_FIELD_NUMBER = 1;
+        private int dataType_;
+
+        /**
+         * <code>required .com.luban.protobuf.MyObject.DataType data_type = 1;</code>
+         */
+        public boolean hasDataType() {
+            return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         * <code>required .com.luban.protobuf.MyObject.DataType data_type = 1;</code>
+         */
+        public DataType getDataType() {
+            @SuppressWarnings("deprecation")
+            DataType result = DataType.valueOf(dataType_);
+            return result == null ? DataType.StudentType : result;
+        }
+
+        public static final int STUDENT_FIELD_NUMBER = 2;
+
+        /**
+         * <code>optional .com.luban.protobuf.Student student = 2;</code>
+         */
+        public boolean hasStudent() {
+            return dataBodyCase_ == 2;
+        }
+
+        /**
+         * <code>optional .com.luban.protobuf.Student student = 2;</code>
+         */
+        public Student getStudent() {
+            if (dataBodyCase_ == 2) {
+                return (Student) dataBody_;
+            }
+            return Student.getDefaultInstance();
+        }
+
+        /**
+         * <code>optional .com.luban.protobuf.Student student = 2;</code>
+         */
+        public StudentOrBuilder getStudentOrBuilder() {
+            if (dataBodyCase_ == 2) {
+                return (Student) dataBody_;
+            }
+            return Student.getDefaultInstance();
+        }
+
+        public static final int TEACHER_FIELD_NUMBER = 3;
+
+        /**
+         * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
+         */
+        public boolean hasTeacher() {
+            return dataBodyCase_ == 3;
+        }
+
+        /**
+         * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
+         */
+        public Teacher getTeacher() {
+            if (dataBodyCase_ == 3) {
+                return (Teacher) dataBody_;
+            }
+            return Teacher.getDefaultInstance();
+        }
+
+        /**
+         * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
+         */
+        public TeacherOrBuilder getTeacherOrBuilder() {
+            if (dataBodyCase_ == 3) {
+                return (Teacher) dataBody_;
+            }
+            return Teacher.getDefaultInstance();
+        }
+
+        public static final int PATRIARCH_FIELD_NUMBER = 4;
+
+        /**
+         * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
+         */
+        public boolean hasPatriarch() {
+            return dataBodyCase_ == 4;
+        }
+
+        /**
+         * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
+         */
+        public Patriarch getPatriarch() {
+            if (dataBodyCase_ == 4) {
+                return (Patriarch) dataBody_;
+            }
+            return Patriarch.getDefaultInstance();
+        }
+
+        /**
+         * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
+         */
+        public PatriarchOrBuilder getPatriarchOrBuilder() {
+            if (dataBodyCase_ == 4) {
+                return (Patriarch) dataBody_;
+            }
+            return Patriarch.getDefaultInstance();
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            if (!hasDataType()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo( CodedOutputStream output)
+                throws java.io.IOException {
+            if (((bitField0_ & 0x00000001) != 0)) {
+                output.writeEnum(1, dataType_);
+            }
+            if (dataBodyCase_ == 2) {
+                output.writeMessage(2, (Student) dataBody_);
+            }
+            if (dataBodyCase_ == 3) {
+                output.writeMessage(3, (Teacher) dataBody_);
+            }
+            if (dataBodyCase_ == 4) {
+                output.writeMessage(4, (Patriarch) dataBody_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) != 0)) {
+                size +=  CodedOutputStream
+                        .computeEnumSize(1, dataType_);
+            }
+            if (dataBodyCase_ == 2) {
+                size +=  CodedOutputStream
+                        .computeMessageSize(2, (Student) dataBody_);
+            }
+            if (dataBodyCase_ == 3) {
+                size +=  CodedOutputStream
+                        .computeMessageSize(3, (Teacher) dataBody_);
+            }
+            if (dataBodyCase_ == 4) {
+                size +=  CodedOutputStream
+                        .computeMessageSize(4, (Patriarch) dataBody_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof MyObject)) {
+                return super.equals(obj);
+            }
+            MyObject other = (MyObject) obj;
+
+            if (hasDataType() != other.hasDataType()) return false;
+            if (hasDataType()) {
+                if (dataType_ != other.dataType_) return false;
+            }
+            if (!getDataBodyCase().equals(other.getDataBodyCase())) return false;
+            switch (dataBodyCase_) {
+                case 2:
+                    if (!getStudent()
+                            .equals(other.getStudent())) return false;
+                    break;
+                case 3:
+                    if (!getTeacher()
+                            .equals(other.getTeacher())) return false;
+                    break;
+                case 4:
+                    if (!getPatriarch()
+                            .equals(other.getPatriarch())) return false;
+                    break;
+                case 0:
+                default:
+            }
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasDataType()) {
+                hash = (37 * hash) + DATA_TYPE_FIELD_NUMBER;
+                hash = (53 * hash) + dataType_;
+            }
+            switch (dataBodyCase_) {
+                case 2:
+                    hash = (37 * hash) + STUDENT_FIELD_NUMBER;
+                    hash = (53 * hash) + getStudent().hashCode();
+                    break;
+                case 3:
+                    hash = (37 * hash) + TEACHER_FIELD_NUMBER;
+                    hash = (53 * hash) + getTeacher().hashCode();
+                    break;
+                case 4:
+                    hash = (37 * hash) + PATRIARCH_FIELD_NUMBER;
+                    hash = (53 * hash) + getPatriarch().hashCode();
+                    break;
+                case 0:
+                default:
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static MyObject parseFrom(
+                java.nio.ByteBuffer data)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static MyObject parseFrom(
+                java.nio.ByteBuffer data,
+                 ExtensionRegistryLite extensionRegistry)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static MyObject parseFrom(
+                 ByteString data)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static MyObject parseFrom(
+                 ByteString data,
+                 ExtensionRegistryLite extensionRegistry)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static MyObject parseFrom(byte[] data)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static MyObject parseFrom(
+                byte[] data,
+                 ExtensionRegistryLite extensionRegistry)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static MyObject parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static MyObject parseFrom(
+                java.io.InputStream input,
+                 ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static MyObject parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static MyObject parseDelimitedFrom(
+                java.io.InputStream input,
+                 ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static MyObject parseFrom(
+                 CodedInputStream input)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static MyObject parseFrom(
+                 CodedInputStream input,
+                 ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(MyObject prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code com.luban.protobuf.MyObject}
+         */
+        public static final class Builder extends
+                GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.luban.protobuf.MyObject)
+                MyObjectOrBuilder {
+            public static final  Descriptors.Descriptor
+            getDescriptor() {
+                return DataInfo.internal_static_com_luban_protobuf_MyObject_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return DataInfo.internal_static_com_luban_protobuf_MyObject_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                MyObject.class, Builder.class);
+            }
+
+            // Construct using com.luban.netty.sixdome.DataInfo.MyObject.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                dataType_ = 0;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                dataBodyCase_ = 0;
+                dataBody_ = null;
+                return this;
+            }
+
+            @Override
+            public  Descriptors.Descriptor
+            getDescriptorForType() {
+                return DataInfo.internal_static_com_luban_protobuf_MyObject_descriptor;
+            }
+
+            @Override
+            public MyObject getDefaultInstanceForType() {
+                return MyObject.getDefaultInstance();
+            }
+
+            @Override
+            public MyObject build() {
+                MyObject result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public MyObject buildPartial() {
+                MyObject result = new MyObject(this);
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) != 0)) {
+                    to_bitField0_ |= 0x00000001;
+                }
+                result.dataType_ = dataType_;
+                if (dataBodyCase_ == 2) {
+                    if (studentBuilder_ == null) {
+                        result.dataBody_ = dataBody_;
+                    } else {
+                        result.dataBody_ = studentBuilder_.build();
+                    }
+                }
+                if (dataBodyCase_ == 3) {
+                    if (teacherBuilder_ == null) {
+                        result.dataBody_ = dataBody_;
+                    } else {
+                        result.dataBody_ = teacherBuilder_.build();
+                    }
+                }
+                if (dataBodyCase_ == 4) {
+                    if (patriarchBuilder_ == null) {
+                        result.dataBody_ = dataBody_;
+                    } else {
+                        result.dataBody_ = patriarchBuilder_.build();
+                    }
+                }
+                result.bitField0_ = to_bitField0_;
+                result.dataBodyCase_ = dataBodyCase_;
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                     Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                     Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                     Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                     Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                     Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom( Message other) {
+                if (other instanceof MyObject) {
+                    return mergeFrom((MyObject) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(MyObject other) {
+                if (other == MyObject.getDefaultInstance()) return this;
+                if (other.hasDataType()) {
+                    setDataType(other.getDataType());
+                }
+                switch (other.getDataBodyCase()) {
+                    case STUDENT: {
+                        mergeStudent(other.getStudent());
+                        break;
+                    }
+                    case TEACHER: {
+                        mergeTeacher(other.getTeacher());
+                        break;
+                    }
+                    case PATRIARCH: {
+                        mergePatriarch(other.getPatriarch());
+                        break;
+                    }
+                    case DATABODY_NOT_SET: {
+                        break;
+                    }
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                if (!hasDataType()) {
+                    return false;
+                }
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                     CodedInputStream input,
+                     ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                MyObject parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch ( InvalidProtocolBufferException e) {
+                    parsedMessage = (MyObject) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int dataBodyCase_ = 0;
+            private Object dataBody_;
+
+            public DataBodyCase
+            getDataBodyCase() {
+                return DataBodyCase.forNumber(
+                        dataBodyCase_);
+            }
+
+            public Builder clearDataBody() {
+                dataBodyCase_ = 0;
+                dataBody_ = null;
+                onChanged();
+                return this;
+            }
+
+            private int bitField0_;
+
+            private int dataType_ = 0;
+
+            /**
+             * <code>required .com.luban.protobuf.MyObject.DataType data_type = 1;</code>
+             */
+            public boolean hasDataType() {
+                return ((bitField0_ & 0x00000001) != 0);
+            }
+
+            /**
+             * <code>required .com.luban.protobuf.MyObject.DataType data_type = 1;</code>
+             */
+            public DataType getDataType() {
+                @SuppressWarnings("deprecation")
+                DataType result = DataType.valueOf(dataType_);
+                return result == null ? DataType.StudentType : result;
+            }
+
+            /**
+             * <code>required .com.luban.protobuf.MyObject.DataType data_type = 1;</code>
+             */
+            public Builder setDataType(DataType value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                dataType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>required .com.luban.protobuf.MyObject.DataType data_type = 1;</code>
+             */
+            public Builder clearDataType() {
+                bitField0_ = (bitField0_ & ~0x00000001);
+                dataType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private  SingleFieldBuilderV3<
+                    Student, Student.Builder, StudentOrBuilder> studentBuilder_;
+
+            /**
+             * <code>optional .com.luban.protobuf.Student student = 2;</code>
+             */
+            public boolean hasStudent() {
+                return dataBodyCase_ == 2;
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Student student = 2;</code>
+             */
+            public Student getStudent() {
+                if (studentBuilder_ == null) {
+                    if (dataBodyCase_ == 2) {
+                        return (Student) dataBody_;
+                    }
+                    return Student.getDefaultInstance();
+                } else {
+                    if (dataBodyCase_ == 2) {
+                        return studentBuilder_.getMessage();
+                    }
+                    return Student.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Student student = 2;</code>
+             */
+            public Builder setStudent(Student value) {
+                if (studentBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    dataBody_ = value;
+                    onChanged();
+                } else {
+                    studentBuilder_.setMessage(value);
+                }
+                dataBodyCase_ = 2;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Student student = 2;</code>
+             */
+            public Builder setStudent(
+                    Student.Builder builderForValue) {
+                if (studentBuilder_ == null) {
+                    dataBody_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    studentBuilder_.setMessage(builderForValue.build());
+                }
+                dataBodyCase_ = 2;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Student student = 2;</code>
+             */
+            public Builder mergeStudent(Student value) {
+                if (studentBuilder_ == null) {
+                    if (dataBodyCase_ == 2 &&
+                            dataBody_ != Student.getDefaultInstance()) {
+                        dataBody_ = Student.newBuilder((Student) dataBody_)
+                                .mergeFrom(value).buildPartial();
+                    } else {
+                        dataBody_ = value;
+                    }
+                    onChanged();
+                } else {
+                    if (dataBodyCase_ == 2) {
+                        studentBuilder_.mergeFrom(value);
+                    }
+                    studentBuilder_.setMessage(value);
+                }
+                dataBodyCase_ = 2;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Student student = 2;</code>
+             */
+            public Builder clearStudent() {
+                if (studentBuilder_ == null) {
+                    if (dataBodyCase_ == 2) {
+                        dataBodyCase_ = 0;
+                        dataBody_ = null;
+                        onChanged();
+                    }
+                } else {
+                    if (dataBodyCase_ == 2) {
+                        dataBodyCase_ = 0;
+                        dataBody_ = null;
+                    }
+                    studentBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Student student = 2;</code>
+             */
+            public Student.Builder getStudentBuilder() {
+                return getStudentFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Student student = 2;</code>
+             */
+            public StudentOrBuilder getStudentOrBuilder() {
+                if ((dataBodyCase_ == 2) && (studentBuilder_ != null)) {
+                    return studentBuilder_.getMessageOrBuilder();
+                } else {
+                    if (dataBodyCase_ == 2) {
+                        return (Student) dataBody_;
+                    }
+                    return Student.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Student student = 2;</code>
+             */
+            private  SingleFieldBuilderV3<
+                    Student, Student.Builder, StudentOrBuilder>
+            getStudentFieldBuilder() {
+                if (studentBuilder_ == null) {
+                    if (!(dataBodyCase_ == 2)) {
+                        dataBody_ = Student.getDefaultInstance();
+                    }
+                    studentBuilder_ = new  SingleFieldBuilderV3<
+                            Student, Student.Builder, StudentOrBuilder>(
+                            (Student) dataBody_,
+                            getParentForChildren(),
+                            isClean());
+                    dataBody_ = null;
+                }
+                dataBodyCase_ = 2;
+                onChanged();
+                ;
+                return studentBuilder_;
+            }
+
+            private  SingleFieldBuilderV3<
+                    Teacher, Teacher.Builder, TeacherOrBuilder> teacherBuilder_;
+
+            /**
+             * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
+             */
+            public boolean hasTeacher() {
+                return dataBodyCase_ == 3;
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
+             */
+            public Teacher getTeacher() {
+                if (teacherBuilder_ == null) {
+                    if (dataBodyCase_ == 3) {
+                        return (Teacher) dataBody_;
+                    }
+                    return Teacher.getDefaultInstance();
+                } else {
+                    if (dataBodyCase_ == 3) {
+                        return teacherBuilder_.getMessage();
+                    }
+                    return Teacher.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
+             */
+            public Builder setTeacher(Teacher value) {
+                if (teacherBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    dataBody_ = value;
+                    onChanged();
+                } else {
+                    teacherBuilder_.setMessage(value);
+                }
+                dataBodyCase_ = 3;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
+             */
+            public Builder setTeacher(
+                    Teacher.Builder builderForValue) {
+                if (teacherBuilder_ == null) {
+                    dataBody_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    teacherBuilder_.setMessage(builderForValue.build());
+                }
+                dataBodyCase_ = 3;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
+             */
+            public Builder mergeTeacher(Teacher value) {
+                if (teacherBuilder_ == null) {
+                    if (dataBodyCase_ == 3 &&
+                            dataBody_ != Teacher.getDefaultInstance()) {
+                        dataBody_ = Teacher.newBuilder((Teacher) dataBody_)
+                                .mergeFrom(value).buildPartial();
+                    } else {
+                        dataBody_ = value;
+                    }
+                    onChanged();
+                } else {
+                    if (dataBodyCase_ == 3) {
+                        teacherBuilder_.mergeFrom(value);
+                    }
+                    teacherBuilder_.setMessage(value);
+                }
+                dataBodyCase_ = 3;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
+             */
+            public Builder clearTeacher() {
+                if (teacherBuilder_ == null) {
+                    if (dataBodyCase_ == 3) {
+                        dataBodyCase_ = 0;
+                        dataBody_ = null;
+                        onChanged();
+                    }
+                } else {
+                    if (dataBodyCase_ == 3) {
+                        dataBodyCase_ = 0;
+                        dataBody_ = null;
+                    }
+                    teacherBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
+             */
+            public Teacher.Builder getTeacherBuilder() {
+                return getTeacherFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
+             */
+            public TeacherOrBuilder getTeacherOrBuilder() {
+                if ((dataBodyCase_ == 3) && (teacherBuilder_ != null)) {
+                    return teacherBuilder_.getMessageOrBuilder();
+                } else {
+                    if (dataBodyCase_ == 3) {
+                        return (Teacher) dataBody_;
+                    }
+                    return Teacher.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Teacher teacher = 3;</code>
+             */
+            private  SingleFieldBuilderV3<
+                    Teacher, Teacher.Builder, TeacherOrBuilder>
+            getTeacherFieldBuilder() {
+                if (teacherBuilder_ == null) {
+                    if (!(dataBodyCase_ == 3)) {
+                        dataBody_ = Teacher.getDefaultInstance();
+                    }
+                    teacherBuilder_ = new  SingleFieldBuilderV3<
+                            Teacher, Teacher.Builder, TeacherOrBuilder>(
+                            (Teacher) dataBody_,
+                            getParentForChildren(),
+                            isClean());
+                    dataBody_ = null;
+                }
+                dataBodyCase_ = 3;
+                onChanged();
+                ;
+                return teacherBuilder_;
+            }
+
+            private  SingleFieldBuilderV3<
+                    Patriarch, Patriarch.Builder, PatriarchOrBuilder> patriarchBuilder_;
+
+            /**
+             * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
+             */
+            public boolean hasPatriarch() {
+                return dataBodyCase_ == 4;
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
+             */
+            public Patriarch getPatriarch() {
+                if (patriarchBuilder_ == null) {
+                    if (dataBodyCase_ == 4) {
+                        return (Patriarch) dataBody_;
+                    }
+                    return Patriarch.getDefaultInstance();
+                } else {
+                    if (dataBodyCase_ == 4) {
+                        return patriarchBuilder_.getMessage();
+                    }
+                    return Patriarch.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
+             */
+            public Builder setPatriarch(Patriarch value) {
+                if (patriarchBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    dataBody_ = value;
+                    onChanged();
+                } else {
+                    patriarchBuilder_.setMessage(value);
+                }
+                dataBodyCase_ = 4;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
+             */
+            public Builder setPatriarch(
+                    Patriarch.Builder builderForValue) {
+                if (patriarchBuilder_ == null) {
+                    dataBody_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    patriarchBuilder_.setMessage(builderForValue.build());
+                }
+                dataBodyCase_ = 4;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
+             */
+            public Builder mergePatriarch(Patriarch value) {
+                if (patriarchBuilder_ == null) {
+                    if (dataBodyCase_ == 4 &&
+                            dataBody_ != Patriarch.getDefaultInstance()) {
+                        dataBody_ = Patriarch.newBuilder((Patriarch) dataBody_)
+                                .mergeFrom(value).buildPartial();
+                    } else {
+                        dataBody_ = value;
+                    }
+                    onChanged();
+                } else {
+                    if (dataBodyCase_ == 4) {
+                        patriarchBuilder_.mergeFrom(value);
+                    }
+                    patriarchBuilder_.setMessage(value);
+                }
+                dataBodyCase_ = 4;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
+             */
+            public Builder clearPatriarch() {
+                if (patriarchBuilder_ == null) {
+                    if (dataBodyCase_ == 4) {
+                        dataBodyCase_ = 0;
+                        dataBody_ = null;
+                        onChanged();
+                    }
+                } else {
+                    if (dataBodyCase_ == 4) {
+                        dataBodyCase_ = 0;
+                        dataBody_ = null;
+                    }
+                    patriarchBuilder_.clear();
+                }
+                return this;
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
+             */
+            public Patriarch.Builder getPatriarchBuilder() {
+                return getPatriarchFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
+             */
+            public PatriarchOrBuilder getPatriarchOrBuilder() {
+                if ((dataBodyCase_ == 4) && (patriarchBuilder_ != null)) {
+                    return patriarchBuilder_.getMessageOrBuilder();
+                } else {
+                    if (dataBodyCase_ == 4) {
+                        return (Patriarch) dataBody_;
+                    }
+                    return Patriarch.getDefaultInstance();
+                }
+            }
+
+            /**
+             * <code>optional .com.luban.protobuf.Patriarch patriarch = 4;</code>
+             */
+            private  SingleFieldBuilderV3<
+                    Patriarch, Patriarch.Builder, PatriarchOrBuilder>
+            getPatriarchFieldBuilder() {
+                if (patriarchBuilder_ == null) {
+                    if (!(dataBodyCase_ == 4)) {
+                        dataBody_ = Patriarch.getDefaultInstance();
+                    }
+                    patriarchBuilder_ = new  SingleFieldBuilderV3<
+                            Patriarch, Patriarch.Builder, PatriarchOrBuilder>(
+                            (Patriarch) dataBody_,
+                            getParentForChildren(),
+                            isClean());
+                    dataBody_ = null;
+                }
+                dataBodyCase_ = 4;
+                onChanged();
+                ;
+                return patriarchBuilder_;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final  UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final  UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+
+            // @@protoc_insertion_point(builder_scope:com.luban.protobuf.MyObject)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.luban.protobuf.MyObject)
+        private static final MyObject DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new MyObject();
+        }
+
+        public static MyObject getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        @Deprecated
+        public static final  Parser<MyObject>
+                PARSER = new  AbstractParser<MyObject>() {
+            @Override
+            public MyObject parsePartialFrom(
+                     CodedInputStream input,
+                     ExtensionRegistryLite extensionRegistry)
+                    throws  InvalidProtocolBufferException {
+                return new MyObject(input, extensionRegistry);
+            }
+        };
+
+        public static  Parser<MyObject> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public  Parser<MyObject> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public MyObject getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    // @@protoc_insertion_point(class_scope:com.luban.protobuf.MyObject)
-    private static final MyObject DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new MyObject();
-    }
+    public interface StudentOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.luban.protobuf.Student)
+             MessageOrBuilder {
 
-    public static MyObject getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        /**
+         * <code>optional string name = 1;</code>
+         */
+        boolean hasName();
 
-    @Deprecated public static final com.google.protobuf.Parser<MyObject>
-        PARSER = new com.google.protobuf.AbstractParser<MyObject>() {
-      @Override
-      public MyObject parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MyObject(input, extensionRegistry);
-      }
-    };
+        /**
+         * <code>optional string name = 1;</code>
+         */
+        String getName();
 
-    public static com.google.protobuf.Parser<MyObject> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<MyObject> getParserForType() {
-      return PARSER;
-    }
-
-    @Override
-    public MyObject getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface StudentOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.luban.protobuf.Student)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    boolean hasName();
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    String getName();
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <code>optional string name = 1;</code>
+         */
+         ByteString
         getNameBytes();
 
-    /**
-     * <code>optional int32 age = 2;</code>
-     */
-    boolean hasAge();
-    /**
-     * <code>optional int32 age = 2;</code>
-     */
-    int getAge();
+        /**
+         * <code>optional int32 age = 2;</code>
+         */
+        boolean hasAge();
 
-    /**
-     * <code>optional string address = 3;</code>
-     */
-    boolean hasAddress();
-    /**
-     * <code>optional string address = 3;</code>
-     */
-    String getAddress();
-    /**
-     * <code>optional string address = 3;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <code>optional int32 age = 2;</code>
+         */
+        int getAge();
+
+        /**
+         * <code>optional string address = 3;</code>
+         */
+        boolean hasAddress();
+
+        /**
+         * <code>optional string address = 3;</code>
+         */
+        String getAddress();
+
+        /**
+         * <code>optional string address = 3;</code>
+         */
+         ByteString
         getAddressBytes();
-  }
-  /**
-   * Protobuf type {@code com.luban.protobuf.Student}
-   */
-  public  static final class Student extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.luban.protobuf.Student)
-      StudentOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Student.newBuilder() to construct.
-    private Student(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Student() {
-      name_ = "";
-      address_ = "";
     }
 
-    @Override
-    @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Student();
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Student(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              name_ = bs;
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              age_ = input.readInt32();
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
-              address_ = bs;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return DataInfo.internal_static_com_luban_protobuf_Student_descriptor;
-    }
-
-    @Override
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return DataInfo.internal_static_com_luban_protobuf_Student_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              Student.class, Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int NAME_FIELD_NUMBER = 1;
-    private volatile Object name_;
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    public boolean hasName() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    public String getName() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          name_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int AGE_FIELD_NUMBER = 2;
-    private int age_;
-    /**
-     * <code>optional int32 age = 2;</code>
-     */
-    public boolean hasAge() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>optional int32 age = 2;</code>
-     */
-    public int getAge() {
-      return age_;
-    }
-
-    public static final int ADDRESS_FIELD_NUMBER = 3;
-    private volatile Object address_;
-    /**
-     * <code>optional string address = 3;</code>
-     */
-    public boolean hasAddress() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>optional string address = 3;</code>
-     */
-    public String getAddress() {
-      Object ref = address_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          address_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string address = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getAddressBytes() {
-      Object ref = address_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        address_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeInt32(2, age_);
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, address_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, age_);
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, address_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof Student)) {
-        return super.equals(obj);
-      }
-      Student other = (Student) obj;
-
-      if (hasName() != other.hasName()) return false;
-      if (hasName()) {
-        if (!getName()
-            .equals(other.getName())) return false;
-      }
-      if (hasAge() != other.hasAge()) return false;
-      if (hasAge()) {
-        if (getAge()
-            != other.getAge()) return false;
-      }
-      if (hasAddress() != other.hasAddress()) return false;
-      if (hasAddress()) {
-        if (!getAddress()
-            .equals(other.getAddress())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasName()) {
-        hash = (37 * hash) + NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getName().hashCode();
-      }
-      if (hasAge()) {
-        hash = (37 * hash) + AGE_FIELD_NUMBER;
-        hash = (53 * hash) + getAge();
-      }
-      if (hasAddress()) {
-        hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
-        hash = (53 * hash) + getAddress().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static Student parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Student parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static Student parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Student parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static Student parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Student parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static Student parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static Student parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static Student parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static Student parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static Student parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static Student parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(Student prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.luban.protobuf.Student}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.luban.protobuf.Student)
-        StudentOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return DataInfo.internal_static_com_luban_protobuf_Student_descriptor;
-      }
+    public static final class Student extends
+            GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.luban.protobuf.Student)
+            StudentOrBuilder {
+        private static final long serialVersionUID = 0L;
 
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return DataInfo.internal_static_com_luban_protobuf_Student_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                Student.class, Builder.class);
-      }
-
-      // Construct using com.luban.netty.sixdome.DataInfo.Student.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        // Use Student.newBuilder() to construct.
+        private Student(GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @Override
-      public Builder clear() {
-        super.clear();
-        name_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        age_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        address_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
 
-      @Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return DataInfo.internal_static_com_luban_protobuf_Student_descriptor;
-      }
-
-      @Override
-      public Student getDefaultInstanceForType() {
-        return Student.getDefaultInstance();
-      }
-
-      @Override
-      public Student build() {
-        Student result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private Student() {
+            name_ = "";
+            address_ = "";
         }
-        return result;
-      }
 
-      @Override
-      public Student buildPartial() {
-        Student result = new Student(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          to_bitField0_ |= 0x00000001;
+        @Override
+        @SuppressWarnings({"unused"})
+        protected Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new Student();
         }
-        result.name_ = name_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.age_ = age_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.address_ = address_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
 
-      @Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.setField(field, value);
-      }
-      @Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Student) {
-          return mergeFrom((Student)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @Override
+        public final  UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
-      }
 
-      public Builder mergeFrom(Student other) {
-        if (other == Student.getDefaultInstance()) return this;
-        if (other.hasName()) {
-          bitField0_ |= 0x00000001;
-          name_ = other.name_;
-          onChanged();
+        private Student(
+                 CodedInputStream input,
+                 ExtensionRegistryLite extensionRegistry)
+                throws  InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
+            }
+            int mutable_bitField0_ = 0;
+             UnknownFieldSet.Builder unknownFields =
+                     UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                             ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000001;
+                            name_ = bs;
+                            break;
+                        }
+                        case 16: {
+                            bitField0_ |= 0x00000002;
+                            age_ = input.readInt32();
+                            break;
+                        }
+                        case 26: {
+                             ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000004;
+                            address_ = bs;
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch ( InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new  InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
-        if (other.hasAge()) {
-          setAge(other.getAge());
+
+        public static final  Descriptors.Descriptor
+        getDescriptor() {
+            return DataInfo.internal_static_com_luban_protobuf_Student_descriptor;
         }
-        if (other.hasAddress()) {
-          bitField0_ |= 0x00000004;
-          address_ = other.address_;
-          onChanged();
+
+        @Override
+        protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return DataInfo.internal_static_com_luban_protobuf_Student_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            Student.class, Builder.class);
         }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
 
-      @Override
-      public final boolean isInitialized() {
-        return true;
-      }
+        private int bitField0_;
+        public static final int NAME_FIELD_NUMBER = 1;
+        private volatile Object name_;
 
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        Student parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Student) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        /**
+         * <code>optional string name = 1;</code>
+         */
+        public boolean hasName() {
+            return ((bitField0_ & 0x00000001) != 0);
         }
-        return this;
-      }
-      private int bitField0_;
 
-      private Object name_ = "";
-      /**
-       * <code>optional string name = 1;</code>
-       */
-      public boolean hasName() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>optional string name = 1;</code>
-       */
-      public String getName() {
-        Object ref = name_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            name_ = s;
-          }
-          return s;
-        } else {
-          return (String) ref;
+        /**
+         * <code>optional string name = 1;</code>
+         */
+        public String getName() {
+            Object ref = name_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                 ByteString bs =
+                        ( ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    name_ = s;
+                }
+                return s;
+            }
         }
-      }
-      /**
-       * <code>optional string name = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        /**
+         * <code>optional string name = 1;</code>
+         */
+        public  ByteString
+        getNameBytes() {
+            Object ref = name_;
+            if (ref instanceof String) {
+                 ByteString b =
+                         ByteString.copyFromUtf8(
+                                (String) ref);
+                name_ = b;
+                return b;
+            } else {
+                return ( ByteString) ref;
+            }
         }
-      }
-      /**
-       * <code>optional string name = 1;</code>
-       */
-      public Builder setName(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string name = 1;</code>
-       */
-      public Builder clearName() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string name = 1;</code>
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        name_ = value;
-        onChanged();
-        return this;
-      }
 
-      private int age_ ;
-      /**
-       * <code>optional int32 age = 2;</code>
-       */
-      public boolean hasAge() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <code>optional int32 age = 2;</code>
-       */
-      public int getAge() {
-        return age_;
-      }
-      /**
-       * <code>optional int32 age = 2;</code>
-       */
-      public Builder setAge(int value) {
-        bitField0_ |= 0x00000002;
-        age_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 age = 2;</code>
-       */
-      public Builder clearAge() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        age_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int AGE_FIELD_NUMBER = 2;
+        private int age_;
 
-      private Object address_ = "";
-      /**
-       * <code>optional string address = 3;</code>
-       */
-      public boolean hasAddress() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>optional string address = 3;</code>
-       */
-      public String getAddress() {
-        Object ref = address_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            address_ = s;
-          }
-          return s;
-        } else {
-          return (String) ref;
+        /**
+         * <code>optional int32 age = 2;</code>
+         */
+        public boolean hasAge() {
+            return ((bitField0_ & 0x00000002) != 0);
         }
-      }
-      /**
-       * <code>optional string address = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getAddressBytes() {
-        Object ref = address_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          address_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        /**
+         * <code>optional int32 age = 2;</code>
+         */
+        public int getAge() {
+            return age_;
         }
-      }
-      /**
-       * <code>optional string address = 3;</code>
-       */
-      public Builder setAddress(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        address_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string address = 3;</code>
-       */
-      public Builder clearAddress() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        address_ = getDefaultInstance().getAddress();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string address = 3;</code>
-       */
-      public Builder setAddressBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        address_ = value;
-        onChanged();
-        return this;
-      }
-      @Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
 
-      @Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        public static final int ADDRESS_FIELD_NUMBER = 3;
+        private volatile Object address_;
+
+        /**
+         * <code>optional string address = 3;</code>
+         */
+        public boolean hasAddress() {
+            return ((bitField0_ & 0x00000004) != 0);
+        }
+
+        /**
+         * <code>optional string address = 3;</code>
+         */
+        public String getAddress() {
+            Object ref = address_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                 ByteString bs =
+                        ( ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    address_ = s;
+                }
+                return s;
+            }
+        }
+
+        /**
+         * <code>optional string address = 3;</code>
+         */
+        public  ByteString
+        getAddressBytes() {
+            Object ref = address_;
+            if (ref instanceof String) {
+                 ByteString b =
+                         ByteString.copyFromUtf8(
+                                (String) ref);
+                address_ = b;
+                return b;
+            } else {
+                return ( ByteString) ref;
+            }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo( CodedOutputStream output)
+                throws java.io.IOException {
+            if (((bitField0_ & 0x00000001) != 0)) {
+                GeneratedMessageV3.writeString(output, 1, name_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                output.writeInt32(2, age_);
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                GeneratedMessageV3.writeString(output, 3, address_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) != 0)) {
+                size += GeneratedMessageV3.computeStringSize(1, name_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                size +=  CodedOutputStream
+                        .computeInt32Size(2, age_);
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                size += GeneratedMessageV3.computeStringSize(3, address_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof Student)) {
+                return super.equals(obj);
+            }
+            Student other = (Student) obj;
+
+            if (hasName() != other.hasName()) return false;
+            if (hasName()) {
+                if (!getName()
+                        .equals(other.getName())) return false;
+            }
+            if (hasAge() != other.hasAge()) return false;
+            if (hasAge()) {
+                if (getAge()
+                        != other.getAge()) return false;
+            }
+            if (hasAddress() != other.hasAddress()) return false;
+            if (hasAddress()) {
+                if (!getAddress()
+                        .equals(other.getAddress())) return false;
+            }
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasName()) {
+                hash = (37 * hash) + NAME_FIELD_NUMBER;
+                hash = (53 * hash) + getName().hashCode();
+            }
+            if (hasAge()) {
+                hash = (37 * hash) + AGE_FIELD_NUMBER;
+                hash = (53 * hash) + getAge();
+            }
+            if (hasAddress()) {
+                hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+                hash = (53 * hash) + getAddress().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static Student parseFrom(
+                java.nio.ByteBuffer data)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static Student parseFrom(
+                java.nio.ByteBuffer data,
+                 ExtensionRegistryLite extensionRegistry)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static Student parseFrom(
+                 ByteString data)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static Student parseFrom(
+                 ByteString data,
+                 ExtensionRegistryLite extensionRegistry)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static Student parseFrom(byte[] data)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static Student parseFrom(
+                byte[] data,
+                 ExtensionRegistryLite extensionRegistry)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static Student parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static Student parseFrom(
+                java.io.InputStream input,
+                 ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Student parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static Student parseDelimitedFrom(
+                java.io.InputStream input,
+                 ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Student parseFrom(
+                 CodedInputStream input)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static Student parseFrom(
+                 CodedInputStream input,
+                 ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(Student prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code com.luban.protobuf.Student}
+         */
+        public static final class Builder extends
+                GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.luban.protobuf.Student)
+                StudentOrBuilder {
+            public static final  Descriptors.Descriptor
+            getDescriptor() {
+                return DataInfo.internal_static_com_luban_protobuf_Student_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return DataInfo.internal_static_com_luban_protobuf_Student_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                Student.class, Builder.class);
+            }
+
+            // Construct using com.luban.netty.sixdome.DataInfo.Student.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                name_ = "";
+                bitField0_ = (bitField0_ & ~0x00000001);
+                age_ = 0;
+                bitField0_ = (bitField0_ & ~0x00000002);
+                address_ = "";
+                bitField0_ = (bitField0_ & ~0x00000004);
+                return this;
+            }
+
+            @Override
+            public  Descriptors.Descriptor
+            getDescriptorForType() {
+                return DataInfo.internal_static_com_luban_protobuf_Student_descriptor;
+            }
+
+            @Override
+            public Student getDefaultInstanceForType() {
+                return Student.getDefaultInstance();
+            }
+
+            @Override
+            public Student build() {
+                Student result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public Student buildPartial() {
+                Student result = new Student(this);
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) != 0)) {
+                    to_bitField0_ |= 0x00000001;
+                }
+                result.name_ = name_;
+                if (((from_bitField0_ & 0x00000002) != 0)) {
+                    result.age_ = age_;
+                    to_bitField0_ |= 0x00000002;
+                }
+                if (((from_bitField0_ & 0x00000004) != 0)) {
+                    to_bitField0_ |= 0x00000004;
+                }
+                result.address_ = address_;
+                result.bitField0_ = to_bitField0_;
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                     Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                     Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                     Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                     Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                     Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom( Message other) {
+                if (other instanceof Student) {
+                    return mergeFrom((Student) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(Student other) {
+                if (other == Student.getDefaultInstance()) return this;
+                if (other.hasName()) {
+                    bitField0_ |= 0x00000001;
+                    name_ = other.name_;
+                    onChanged();
+                }
+                if (other.hasAge()) {
+                    setAge(other.getAge());
+                }
+                if (other.hasAddress()) {
+                    bitField0_ |= 0x00000004;
+                    address_ = other.address_;
+                    onChanged();
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                     CodedInputStream input,
+                     ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                Student parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch ( InvalidProtocolBufferException e) {
+                    parsedMessage = (Student) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int bitField0_;
+
+            private Object name_ = "";
+
+            /**
+             * <code>optional string name = 1;</code>
+             */
+            public boolean hasName() {
+                return ((bitField0_ & 0x00000001) != 0);
+            }
+
+            /**
+             * <code>optional string name = 1;</code>
+             */
+            public String getName() {
+                Object ref = name_;
+                if (!(ref instanceof String)) {
+                     ByteString bs =
+                            ( ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        name_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <code>optional string name = 1;</code>
+             */
+            public  ByteString
+            getNameBytes() {
+                Object ref = name_;
+                if (ref instanceof String) {
+                     ByteString b =
+                             ByteString.copyFromUtf8(
+                                    (String) ref);
+                    name_ = b;
+                    return b;
+                } else {
+                    return ( ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string name = 1;</code>
+             */
+            public Builder setName(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                name_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string name = 1;</code>
+             */
+            public Builder clearName() {
+                bitField0_ = (bitField0_ & ~0x00000001);
+                name_ = getDefaultInstance().getName();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string name = 1;</code>
+             */
+            public Builder setNameBytes(
+                     ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                name_ = value;
+                onChanged();
+                return this;
+            }
+
+            private int age_;
+
+            /**
+             * <code>optional int32 age = 2;</code>
+             */
+            public boolean hasAge() {
+                return ((bitField0_ & 0x00000002) != 0);
+            }
+
+            /**
+             * <code>optional int32 age = 2;</code>
+             */
+            public int getAge() {
+                return age_;
+            }
+
+            /**
+             * <code>optional int32 age = 2;</code>
+             */
+            public Builder setAge(int value) {
+                bitField0_ |= 0x00000002;
+                age_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional int32 age = 2;</code>
+             */
+            public Builder clearAge() {
+                bitField0_ = (bitField0_ & ~0x00000002);
+                age_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private Object address_ = "";
+
+            /**
+             * <code>optional string address = 3;</code>
+             */
+            public boolean hasAddress() {
+                return ((bitField0_ & 0x00000004) != 0);
+            }
+
+            /**
+             * <code>optional string address = 3;</code>
+             */
+            public String getAddress() {
+                Object ref = address_;
+                if (!(ref instanceof String)) {
+                     ByteString bs =
+                            ( ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        address_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <code>optional string address = 3;</code>
+             */
+            public  ByteString
+            getAddressBytes() {
+                Object ref = address_;
+                if (ref instanceof String) {
+                     ByteString b =
+                             ByteString.copyFromUtf8(
+                                    (String) ref);
+                    address_ = b;
+                    return b;
+                } else {
+                    return ( ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string address = 3;</code>
+             */
+            public Builder setAddress(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000004;
+                address_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string address = 3;</code>
+             */
+            public Builder clearAddress() {
+                bitField0_ = (bitField0_ & ~0x00000004);
+                address_ = getDefaultInstance().getAddress();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string address = 3;</code>
+             */
+            public Builder setAddressBytes(
+                     ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000004;
+                address_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final  UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final  UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
 
 
-      // @@protoc_insertion_point(builder_scope:com.luban.protobuf.Student)
+            // @@protoc_insertion_point(builder_scope:com.luban.protobuf.Student)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.luban.protobuf.Student)
+        private static final Student DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new Student();
+        }
+
+        public static Student getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        @Deprecated
+        public static final  Parser<Student>
+                PARSER = new  AbstractParser<Student>() {
+            @Override
+            public Student parsePartialFrom(
+                     CodedInputStream input,
+                     ExtensionRegistryLite extensionRegistry)
+                    throws  InvalidProtocolBufferException {
+                return new Student(input, extensionRegistry);
+            }
+        };
+
+        public static  Parser<Student> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public  Parser<Student> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public Student getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    // @@protoc_insertion_point(class_scope:com.luban.protobuf.Student)
-    private static final Student DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new Student();
-    }
+    public interface TeacherOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.luban.protobuf.Teacher)
+             MessageOrBuilder {
 
-    public static Student getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        /**
+         * <code>optional string name = 1;</code>
+         */
+        boolean hasName();
 
-    @Deprecated public static final com.google.protobuf.Parser<Student>
-        PARSER = new com.google.protobuf.AbstractParser<Student>() {
-      @Override
-      public Student parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Student(input, extensionRegistry);
-      }
-    };
+        /**
+         * <code>optional string name = 1;</code>
+         */
+        String getName();
 
-    public static com.google.protobuf.Parser<Student> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<Student> getParserForType() {
-      return PARSER;
-    }
-
-    @Override
-    public Student getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface TeacherOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.luban.protobuf.Teacher)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    boolean hasName();
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    String getName();
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <code>optional string name = 1;</code>
+         */
+         ByteString
         getNameBytes();
 
-    /**
-     * <code>optional int32 age = 2;</code>
-     */
-    boolean hasAge();
-    /**
-     * <code>optional int32 age = 2;</code>
-     */
-    int getAge();
+        /**
+         * <code>optional int32 age = 2;</code>
+         */
+        boolean hasAge();
 
-    /**
-     * <code>optional string duty = 3;</code>
-     */
-    boolean hasDuty();
-    /**
-     * <code>optional string duty = 3;</code>
-     */
-    String getDuty();
-    /**
-     * <code>optional string duty = 3;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <code>optional int32 age = 2;</code>
+         */
+        int getAge();
+
+        /**
+         * <code>optional string duty = 3;</code>
+         */
+        boolean hasDuty();
+
+        /**
+         * <code>optional string duty = 3;</code>
+         */
+        String getDuty();
+
+        /**
+         * <code>optional string duty = 3;</code>
+         */
+         ByteString
         getDutyBytes();
-  }
-  /**
-   * Protobuf type {@code com.luban.protobuf.Teacher}
-   */
-  public  static final class Teacher extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.luban.protobuf.Teacher)
-      TeacherOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Teacher.newBuilder() to construct.
-    private Teacher(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Teacher() {
-      name_ = "";
-      duty_ = "";
     }
 
-    @Override
-    @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Teacher();
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Teacher(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              name_ = bs;
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              age_ = input.readInt32();
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000004;
-              duty_ = bs;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return DataInfo.internal_static_com_luban_protobuf_Teacher_descriptor;
-    }
-
-    @Override
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return DataInfo.internal_static_com_luban_protobuf_Teacher_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              Teacher.class, Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int NAME_FIELD_NUMBER = 1;
-    private volatile Object name_;
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    public boolean hasName() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    public String getName() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          name_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int AGE_FIELD_NUMBER = 2;
-    private int age_;
-    /**
-     * <code>optional int32 age = 2;</code>
-     */
-    public boolean hasAge() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>optional int32 age = 2;</code>
-     */
-    public int getAge() {
-      return age_;
-    }
-
-    public static final int DUTY_FIELD_NUMBER = 3;
-    private volatile Object duty_;
-    /**
-     * <code>optional string duty = 3;</code>
-     */
-    public boolean hasDuty() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>optional string duty = 3;</code>
-     */
-    public String getDuty() {
-      Object ref = duty_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          duty_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string duty = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDutyBytes() {
-      Object ref = duty_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        duty_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeInt32(2, age_);
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, duty_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, age_);
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, duty_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof Teacher)) {
-        return super.equals(obj);
-      }
-      Teacher other = (Teacher) obj;
-
-      if (hasName() != other.hasName()) return false;
-      if (hasName()) {
-        if (!getName()
-            .equals(other.getName())) return false;
-      }
-      if (hasAge() != other.hasAge()) return false;
-      if (hasAge()) {
-        if (getAge()
-            != other.getAge()) return false;
-      }
-      if (hasDuty() != other.hasDuty()) return false;
-      if (hasDuty()) {
-        if (!getDuty()
-            .equals(other.getDuty())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasName()) {
-        hash = (37 * hash) + NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getName().hashCode();
-      }
-      if (hasAge()) {
-        hash = (37 * hash) + AGE_FIELD_NUMBER;
-        hash = (53 * hash) + getAge();
-      }
-      if (hasDuty()) {
-        hash = (37 * hash) + DUTY_FIELD_NUMBER;
-        hash = (53 * hash) + getDuty().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static Teacher parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Teacher parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static Teacher parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Teacher parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static Teacher parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Teacher parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static Teacher parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static Teacher parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static Teacher parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static Teacher parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static Teacher parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static Teacher parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(Teacher prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.luban.protobuf.Teacher}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.luban.protobuf.Teacher)
-        TeacherOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return DataInfo.internal_static_com_luban_protobuf_Teacher_descriptor;
-      }
+    public static final class Teacher extends
+            GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.luban.protobuf.Teacher)
+            TeacherOrBuilder {
+        private static final long serialVersionUID = 0L;
 
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return DataInfo.internal_static_com_luban_protobuf_Teacher_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                Teacher.class, Builder.class);
-      }
-
-      // Construct using com.luban.netty.sixdome.DataInfo.Teacher.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        // Use Teacher.newBuilder() to construct.
+        private Teacher(GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @Override
-      public Builder clear() {
-        super.clear();
-        name_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        age_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        duty_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
 
-      @Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return DataInfo.internal_static_com_luban_protobuf_Teacher_descriptor;
-      }
-
-      @Override
-      public Teacher getDefaultInstanceForType() {
-        return Teacher.getDefaultInstance();
-      }
-
-      @Override
-      public Teacher build() {
-        Teacher result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private Teacher() {
+            name_ = "";
+            duty_ = "";
         }
-        return result;
-      }
 
-      @Override
-      public Teacher buildPartial() {
-        Teacher result = new Teacher(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          to_bitField0_ |= 0x00000001;
+        @Override
+        @SuppressWarnings({"unused"})
+        protected Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new Teacher();
         }
-        result.name_ = name_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.age_ = age_;
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.duty_ = duty_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
 
-      @Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.setField(field, value);
-      }
-      @Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Teacher) {
-          return mergeFrom((Teacher)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @Override
+        public final  UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
-      }
 
-      public Builder mergeFrom(Teacher other) {
-        if (other == Teacher.getDefaultInstance()) return this;
-        if (other.hasName()) {
-          bitField0_ |= 0x00000001;
-          name_ = other.name_;
-          onChanged();
+        private Teacher(
+                 CodedInputStream input,
+                 ExtensionRegistryLite extensionRegistry)
+                throws  InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
+            }
+            int mutable_bitField0_ = 0;
+             UnknownFieldSet.Builder unknownFields =
+                     UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                             ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000001;
+                            name_ = bs;
+                            break;
+                        }
+                        case 16: {
+                            bitField0_ |= 0x00000002;
+                            age_ = input.readInt32();
+                            break;
+                        }
+                        case 26: {
+                             ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000004;
+                            duty_ = bs;
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch ( InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new  InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
-        if (other.hasAge()) {
-          setAge(other.getAge());
+
+        public static final  Descriptors.Descriptor
+        getDescriptor() {
+            return DataInfo.internal_static_com_luban_protobuf_Teacher_descriptor;
         }
-        if (other.hasDuty()) {
-          bitField0_ |= 0x00000004;
-          duty_ = other.duty_;
-          onChanged();
+
+        @Override
+        protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return DataInfo.internal_static_com_luban_protobuf_Teacher_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            Teacher.class, Builder.class);
         }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
 
-      @Override
-      public final boolean isInitialized() {
-        return true;
-      }
+        private int bitField0_;
+        public static final int NAME_FIELD_NUMBER = 1;
+        private volatile Object name_;
 
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        Teacher parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Teacher) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        /**
+         * <code>optional string name = 1;</code>
+         */
+        public boolean hasName() {
+            return ((bitField0_ & 0x00000001) != 0);
         }
-        return this;
-      }
-      private int bitField0_;
 
-      private Object name_ = "";
-      /**
-       * <code>optional string name = 1;</code>
-       */
-      public boolean hasName() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>optional string name = 1;</code>
-       */
-      public String getName() {
-        Object ref = name_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            name_ = s;
-          }
-          return s;
-        } else {
-          return (String) ref;
+        /**
+         * <code>optional string name = 1;</code>
+         */
+        public String getName() {
+            Object ref = name_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                 ByteString bs =
+                        ( ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    name_ = s;
+                }
+                return s;
+            }
         }
-      }
-      /**
-       * <code>optional string name = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        /**
+         * <code>optional string name = 1;</code>
+         */
+        public  ByteString
+        getNameBytes() {
+            Object ref = name_;
+            if (ref instanceof String) {
+                 ByteString b =
+                         ByteString.copyFromUtf8(
+                                (String) ref);
+                name_ = b;
+                return b;
+            } else {
+                return ( ByteString) ref;
+            }
         }
-      }
-      /**
-       * <code>optional string name = 1;</code>
-       */
-      public Builder setName(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string name = 1;</code>
-       */
-      public Builder clearName() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string name = 1;</code>
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        name_ = value;
-        onChanged();
-        return this;
-      }
 
-      private int age_ ;
-      /**
-       * <code>optional int32 age = 2;</code>
-       */
-      public boolean hasAge() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <code>optional int32 age = 2;</code>
-       */
-      public int getAge() {
-        return age_;
-      }
-      /**
-       * <code>optional int32 age = 2;</code>
-       */
-      public Builder setAge(int value) {
-        bitField0_ |= 0x00000002;
-        age_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 age = 2;</code>
-       */
-      public Builder clearAge() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        age_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int AGE_FIELD_NUMBER = 2;
+        private int age_;
 
-      private Object duty_ = "";
-      /**
-       * <code>optional string duty = 3;</code>
-       */
-      public boolean hasDuty() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>optional string duty = 3;</code>
-       */
-      public String getDuty() {
-        Object ref = duty_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            duty_ = s;
-          }
-          return s;
-        } else {
-          return (String) ref;
+        /**
+         * <code>optional int32 age = 2;</code>
+         */
+        public boolean hasAge() {
+            return ((bitField0_ & 0x00000002) != 0);
         }
-      }
-      /**
-       * <code>optional string duty = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDutyBytes() {
-        Object ref = duty_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          duty_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        /**
+         * <code>optional int32 age = 2;</code>
+         */
+        public int getAge() {
+            return age_;
         }
-      }
-      /**
-       * <code>optional string duty = 3;</code>
-       */
-      public Builder setDuty(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        duty_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string duty = 3;</code>
-       */
-      public Builder clearDuty() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        duty_ = getDefaultInstance().getDuty();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string duty = 3;</code>
-       */
-      public Builder setDutyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        duty_ = value;
-        onChanged();
-        return this;
-      }
-      @Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
 
-      @Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        public static final int DUTY_FIELD_NUMBER = 3;
+        private volatile Object duty_;
+
+        /**
+         * <code>optional string duty = 3;</code>
+         */
+        public boolean hasDuty() {
+            return ((bitField0_ & 0x00000004) != 0);
+        }
+
+        /**
+         * <code>optional string duty = 3;</code>
+         */
+        public String getDuty() {
+            Object ref = duty_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                 ByteString bs =
+                        ( ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    duty_ = s;
+                }
+                return s;
+            }
+        }
+
+        /**
+         * <code>optional string duty = 3;</code>
+         */
+        public  ByteString
+        getDutyBytes() {
+            Object ref = duty_;
+            if (ref instanceof String) {
+                 ByteString b =
+                         ByteString.copyFromUtf8(
+                                (String) ref);
+                duty_ = b;
+                return b;
+            } else {
+                return ( ByteString) ref;
+            }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo( CodedOutputStream output)
+                throws java.io.IOException {
+            if (((bitField0_ & 0x00000001) != 0)) {
+                GeneratedMessageV3.writeString(output, 1, name_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                output.writeInt32(2, age_);
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                GeneratedMessageV3.writeString(output, 3, duty_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) != 0)) {
+                size += GeneratedMessageV3.computeStringSize(1, name_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                size +=  CodedOutputStream
+                        .computeInt32Size(2, age_);
+            }
+            if (((bitField0_ & 0x00000004) != 0)) {
+                size += GeneratedMessageV3.computeStringSize(3, duty_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof Teacher)) {
+                return super.equals(obj);
+            }
+            Teacher other = (Teacher) obj;
+
+            if (hasName() != other.hasName()) return false;
+            if (hasName()) {
+                if (!getName()
+                        .equals(other.getName())) return false;
+            }
+            if (hasAge() != other.hasAge()) return false;
+            if (hasAge()) {
+                if (getAge()
+                        != other.getAge()) return false;
+            }
+            if (hasDuty() != other.hasDuty()) return false;
+            if (hasDuty()) {
+                if (!getDuty()
+                        .equals(other.getDuty())) return false;
+            }
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasName()) {
+                hash = (37 * hash) + NAME_FIELD_NUMBER;
+                hash = (53 * hash) + getName().hashCode();
+            }
+            if (hasAge()) {
+                hash = (37 * hash) + AGE_FIELD_NUMBER;
+                hash = (53 * hash) + getAge();
+            }
+            if (hasDuty()) {
+                hash = (37 * hash) + DUTY_FIELD_NUMBER;
+                hash = (53 * hash) + getDuty().hashCode();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static Teacher parseFrom(
+                java.nio.ByteBuffer data)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static Teacher parseFrom(
+                java.nio.ByteBuffer data,
+                 ExtensionRegistryLite extensionRegistry)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static Teacher parseFrom(
+                 ByteString data)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static Teacher parseFrom(
+                 ByteString data,
+                 ExtensionRegistryLite extensionRegistry)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static Teacher parseFrom(byte[] data)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static Teacher parseFrom(
+                byte[] data,
+                 ExtensionRegistryLite extensionRegistry)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static Teacher parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static Teacher parseFrom(
+                java.io.InputStream input,
+                 ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Teacher parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static Teacher parseDelimitedFrom(
+                java.io.InputStream input,
+                 ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Teacher parseFrom(
+                 CodedInputStream input)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static Teacher parseFrom(
+                 CodedInputStream input,
+                 ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(Teacher prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code com.luban.protobuf.Teacher}
+         */
+        public static final class Builder extends
+                GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.luban.protobuf.Teacher)
+                TeacherOrBuilder {
+            public static final  Descriptors.Descriptor
+            getDescriptor() {
+                return DataInfo.internal_static_com_luban_protobuf_Teacher_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return DataInfo.internal_static_com_luban_protobuf_Teacher_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                Teacher.class, Builder.class);
+            }
+
+            // Construct using com.luban.netty.sixdome.DataInfo.Teacher.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                name_ = "";
+                bitField0_ = (bitField0_ & ~0x00000001);
+                age_ = 0;
+                bitField0_ = (bitField0_ & ~0x00000002);
+                duty_ = "";
+                bitField0_ = (bitField0_ & ~0x00000004);
+                return this;
+            }
+
+            @Override
+            public  Descriptors.Descriptor
+            getDescriptorForType() {
+                return DataInfo.internal_static_com_luban_protobuf_Teacher_descriptor;
+            }
+
+            @Override
+            public Teacher getDefaultInstanceForType() {
+                return Teacher.getDefaultInstance();
+            }
+
+            @Override
+            public Teacher build() {
+                Teacher result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public Teacher buildPartial() {
+                Teacher result = new Teacher(this);
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) != 0)) {
+                    to_bitField0_ |= 0x00000001;
+                }
+                result.name_ = name_;
+                if (((from_bitField0_ & 0x00000002) != 0)) {
+                    result.age_ = age_;
+                    to_bitField0_ |= 0x00000002;
+                }
+                if (((from_bitField0_ & 0x00000004) != 0)) {
+                    to_bitField0_ |= 0x00000004;
+                }
+                result.duty_ = duty_;
+                result.bitField0_ = to_bitField0_;
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                     Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                     Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                     Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                     Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                     Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom( Message other) {
+                if (other instanceof Teacher) {
+                    return mergeFrom((Teacher) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(Teacher other) {
+                if (other == Teacher.getDefaultInstance()) return this;
+                if (other.hasName()) {
+                    bitField0_ |= 0x00000001;
+                    name_ = other.name_;
+                    onChanged();
+                }
+                if (other.hasAge()) {
+                    setAge(other.getAge());
+                }
+                if (other.hasDuty()) {
+                    bitField0_ |= 0x00000004;
+                    duty_ = other.duty_;
+                    onChanged();
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                     CodedInputStream input,
+                     ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                Teacher parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch ( InvalidProtocolBufferException e) {
+                    parsedMessage = (Teacher) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int bitField0_;
+
+            private Object name_ = "";
+
+            /**
+             * <code>optional string name = 1;</code>
+             */
+            public boolean hasName() {
+                return ((bitField0_ & 0x00000001) != 0);
+            }
+
+            /**
+             * <code>optional string name = 1;</code>
+             */
+            public String getName() {
+                Object ref = name_;
+                if (!(ref instanceof String)) {
+                     ByteString bs =
+                            ( ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        name_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <code>optional string name = 1;</code>
+             */
+            public  ByteString
+            getNameBytes() {
+                Object ref = name_;
+                if (ref instanceof String) {
+                     ByteString b =
+                             ByteString.copyFromUtf8(
+                                    (String) ref);
+                    name_ = b;
+                    return b;
+                } else {
+                    return ( ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string name = 1;</code>
+             */
+            public Builder setName(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                name_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string name = 1;</code>
+             */
+            public Builder clearName() {
+                bitField0_ = (bitField0_ & ~0x00000001);
+                name_ = getDefaultInstance().getName();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string name = 1;</code>
+             */
+            public Builder setNameBytes(
+                     ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                name_ = value;
+                onChanged();
+                return this;
+            }
+
+            private int age_;
+
+            /**
+             * <code>optional int32 age = 2;</code>
+             */
+            public boolean hasAge() {
+                return ((bitField0_ & 0x00000002) != 0);
+            }
+
+            /**
+             * <code>optional int32 age = 2;</code>
+             */
+            public int getAge() {
+                return age_;
+            }
+
+            /**
+             * <code>optional int32 age = 2;</code>
+             */
+            public Builder setAge(int value) {
+                bitField0_ |= 0x00000002;
+                age_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional int32 age = 2;</code>
+             */
+            public Builder clearAge() {
+                bitField0_ = (bitField0_ & ~0x00000002);
+                age_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private Object duty_ = "";
+
+            /**
+             * <code>optional string duty = 3;</code>
+             */
+            public boolean hasDuty() {
+                return ((bitField0_ & 0x00000004) != 0);
+            }
+
+            /**
+             * <code>optional string duty = 3;</code>
+             */
+            public String getDuty() {
+                Object ref = duty_;
+                if (!(ref instanceof String)) {
+                     ByteString bs =
+                            ( ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        duty_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <code>optional string duty = 3;</code>
+             */
+            public  ByteString
+            getDutyBytes() {
+                Object ref = duty_;
+                if (ref instanceof String) {
+                     ByteString b =
+                             ByteString.copyFromUtf8(
+                                    (String) ref);
+                    duty_ = b;
+                    return b;
+                } else {
+                    return ( ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string duty = 3;</code>
+             */
+            public Builder setDuty(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000004;
+                duty_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string duty = 3;</code>
+             */
+            public Builder clearDuty() {
+                bitField0_ = (bitField0_ & ~0x00000004);
+                duty_ = getDefaultInstance().getDuty();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string duty = 3;</code>
+             */
+            public Builder setDutyBytes(
+                     ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000004;
+                duty_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final  UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final  UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
 
 
-      // @@protoc_insertion_point(builder_scope:com.luban.protobuf.Teacher)
+            // @@protoc_insertion_point(builder_scope:com.luban.protobuf.Teacher)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.luban.protobuf.Teacher)
+        private static final Teacher DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new Teacher();
+        }
+
+        public static Teacher getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        @Deprecated
+        public static final  Parser<Teacher>
+                PARSER = new  AbstractParser<Teacher>() {
+            @Override
+            public Teacher parsePartialFrom(
+                     CodedInputStream input,
+                     ExtensionRegistryLite extensionRegistry)
+                    throws  InvalidProtocolBufferException {
+                return new Teacher(input, extensionRegistry);
+            }
+        };
+
+        public static  Parser<Teacher> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public  Parser<Teacher> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public Teacher getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    // @@protoc_insertion_point(class_scope:com.luban.protobuf.Teacher)
-    private static final Teacher DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new Teacher();
-    }
+    public interface PatriarchOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.luban.protobuf.Patriarch)
+             MessageOrBuilder {
 
-    public static Teacher getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
+        /**
+         * <code>optional string name = 1;</code>
+         */
+        boolean hasName();
 
-    @Deprecated public static final com.google.protobuf.Parser<Teacher>
-        PARSER = new com.google.protobuf.AbstractParser<Teacher>() {
-      @Override
-      public Teacher parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Teacher(input, extensionRegistry);
-      }
-    };
+        /**
+         * <code>optional string name = 1;</code>
+         */
+        String getName();
 
-    public static com.google.protobuf.Parser<Teacher> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<Teacher> getParserForType() {
-      return PARSER;
-    }
-
-    @Override
-    public Teacher getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface PatriarchOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.luban.protobuf.Patriarch)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    boolean hasName();
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    String getName();
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    com.google.protobuf.ByteString
+        /**
+         * <code>optional string name = 1;</code>
+         */
+         ByteString
         getNameBytes();
 
-    /**
-     * <code>optional int32 id = 2;</code>
-     */
-    boolean hasId();
-    /**
-     * <code>optional int32 id = 2;</code>
-     */
-    int getId();
-  }
-  /**
-   * Protobuf type {@code com.luban.protobuf.Patriarch}
-   */
-  public  static final class Patriarch extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.luban.protobuf.Patriarch)
-      PatriarchOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Patriarch.newBuilder() to construct.
-    private Patriarch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Patriarch() {
-      name_ = "";
+        /**
+         * <code>optional int32 id = 2;</code>
+         */
+        boolean hasId();
+
+        /**
+         * <code>optional int32 id = 2;</code>
+         */
+        int getId();
     }
 
-    @Override
-    @SuppressWarnings({"unused"})
-    protected Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Patriarch();
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Patriarch(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              name_ = bs;
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              id_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return DataInfo.internal_static_com_luban_protobuf_Patriarch_descriptor;
-    }
-
-    @Override
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return DataInfo.internal_static_com_luban_protobuf_Patriarch_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              Patriarch.class, Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int NAME_FIELD_NUMBER = 1;
-    private volatile Object name_;
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    public boolean hasName() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    public String getName() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          name_ = s;
-        }
-        return s;
-      }
-    }
-    /**
-     * <code>optional string name = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ID_FIELD_NUMBER = 2;
-    private int id_;
-    /**
-     * <code>optional int32 id = 2;</code>
-     */
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>optional int32 id = 2;</code>
-     */
-    public int getId() {
-      return id_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeInt32(2, id_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, id_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof Patriarch)) {
-        return super.equals(obj);
-      }
-      Patriarch other = (Patriarch) obj;
-
-      if (hasName() != other.hasName()) return false;
-      if (hasName()) {
-        if (!getName()
-            .equals(other.getName())) return false;
-      }
-      if (hasId() != other.hasId()) return false;
-      if (hasId()) {
-        if (getId()
-            != other.getId()) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasName()) {
-        hash = (37 * hash) + NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getName().hashCode();
-      }
-      if (hasId()) {
-        hash = (37 * hash) + ID_FIELD_NUMBER;
-        hash = (53 * hash) + getId();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static Patriarch parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Patriarch parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static Patriarch parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Patriarch parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static Patriarch parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Patriarch parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static Patriarch parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static Patriarch parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static Patriarch parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static Patriarch parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static Patriarch parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static Patriarch parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(Patriarch prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
     /**
      * Protobuf type {@code com.luban.protobuf.Patriarch}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.luban.protobuf.Patriarch)
-        PatriarchOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return DataInfo.internal_static_com_luban_protobuf_Patriarch_descriptor;
-      }
+    public static final class Patriarch extends
+            GeneratedMessageV3 implements
+            // @@protoc_insertion_point(message_implements:com.luban.protobuf.Patriarch)
+            PatriarchOrBuilder {
+        private static final long serialVersionUID = 0L;
 
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return DataInfo.internal_static_com_luban_protobuf_Patriarch_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                Patriarch.class, Builder.class);
-      }
-
-      // Construct using com.luban.netty.sixdome.DataInfo.Patriarch.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        // Use Patriarch.newBuilder() to construct.
+        private Patriarch(GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @Override
-      public Builder clear() {
-        super.clear();
-        name_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
 
-      @Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return DataInfo.internal_static_com_luban_protobuf_Patriarch_descriptor;
-      }
-
-      @Override
-      public Patriarch getDefaultInstanceForType() {
-        return Patriarch.getDefaultInstance();
-      }
-
-      @Override
-      public Patriarch build() {
-        Patriarch result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private Patriarch() {
+            name_ = "";
         }
-        return result;
-      }
 
-      @Override
-      public Patriarch buildPartial() {
-        Patriarch result = new Patriarch(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          to_bitField0_ |= 0x00000001;
+        @Override
+        @SuppressWarnings({"unused"})
+        protected Object newInstance(
+                UnusedPrivateParameter unused) {
+            return new Patriarch();
         }
-        result.name_ = name_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.id_ = id_;
-          to_bitField0_ |= 0x00000002;
+
+        @Override
+        public final  UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
 
-      @Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.setField(field, value);
-      }
-      @Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Patriarch) {
-          return mergeFrom((Patriarch)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        private Patriarch(
+                 CodedInputStream input,
+                 ExtensionRegistryLite extensionRegistry)
+                throws  InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new NullPointerException();
+            }
+            int mutable_bitField0_ = 0;
+             UnknownFieldSet.Builder unknownFields =
+                     UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 10: {
+                             ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000001;
+                            name_ = bs;
+                            break;
+                        }
+                        case 16: {
+                            bitField0_ |= 0x00000002;
+                            id_ = input.readInt32();
+                            break;
+                        }
+                        default: {
+                            if (!parseUnknownField(
+                                    input, unknownFields, extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch ( InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new  InvalidProtocolBufferException(
+                        e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
-      }
 
-      public Builder mergeFrom(Patriarch other) {
-        if (other == Patriarch.getDefaultInstance()) return this;
-        if (other.hasName()) {
-          bitField0_ |= 0x00000001;
-          name_ = other.name_;
-          onChanged();
+        public static final  Descriptors.Descriptor
+        getDescriptor() {
+            return DataInfo.internal_static_com_luban_protobuf_Patriarch_descriptor;
         }
-        if (other.hasId()) {
-          setId(other.getId());
+
+        @Override
+        protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return DataInfo.internal_static_com_luban_protobuf_Patriarch_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            Patriarch.class, Builder.class);
         }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
 
-      @Override
-      public final boolean isInitialized() {
-        return true;
-      }
+        private int bitField0_;
+        public static final int NAME_FIELD_NUMBER = 1;
+        private volatile Object name_;
 
-      @Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        Patriarch parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Patriarch) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        /**
+         * <code>optional string name = 1;</code>
+         */
+        public boolean hasName() {
+            return ((bitField0_ & 0x00000001) != 0);
         }
-        return this;
-      }
-      private int bitField0_;
 
-      private Object name_ = "";
-      /**
-       * <code>optional string name = 1;</code>
-       */
-      public boolean hasName() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>optional string name = 1;</code>
-       */
-      public String getName() {
-        Object ref = name_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            name_ = s;
-          }
-          return s;
-        } else {
-          return (String) ref;
+        /**
+         * <code>optional string name = 1;</code>
+         */
+        public String getName() {
+            Object ref = name_;
+            if (ref instanceof String) {
+                return (String) ref;
+            } else {
+                 ByteString bs =
+                        ( ByteString) ref;
+                String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
+                    name_ = s;
+                }
+                return s;
+            }
         }
-      }
-      /**
-       * <code>optional string name = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+
+        /**
+         * <code>optional string name = 1;</code>
+         */
+        public  ByteString
+        getNameBytes() {
+            Object ref = name_;
+            if (ref instanceof String) {
+                 ByteString b =
+                         ByteString.copyFromUtf8(
+                                (String) ref);
+                name_ = b;
+                return b;
+            } else {
+                return ( ByteString) ref;
+            }
         }
-      }
-      /**
-       * <code>optional string name = 1;</code>
-       */
-      public Builder setName(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string name = 1;</code>
-       */
-      public Builder clearName() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string name = 1;</code>
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        name_ = value;
-        onChanged();
-        return this;
-      }
 
-      private int id_ ;
-      /**
-       * <code>optional int32 id = 2;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <code>optional int32 id = 2;</code>
-       */
-      public int getId() {
-        return id_;
-      }
-      /**
-       * <code>optional int32 id = 2;</code>
-       */
-      public Builder setId(int value) {
-        bitField0_ |= 0x00000002;
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 id = 2;</code>
-       */
-      public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        id_ = 0;
-        onChanged();
-        return this;
-      }
-      @Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
+        public static final int ID_FIELD_NUMBER = 2;
+        private int id_;
 
-      @Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        /**
+         * <code>optional int32 id = 2;</code>
+         */
+        public boolean hasId() {
+            return ((bitField0_ & 0x00000002) != 0);
+        }
+
+        /**
+         * <code>optional int32 id = 2;</code>
+         */
+        public int getId() {
+            return id_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @Override
+        public void writeTo( CodedOutputStream output)
+                throws java.io.IOException {
+            if (((bitField0_ & 0x00000001) != 0)) {
+                GeneratedMessageV3.writeString(output, 1, name_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                output.writeInt32(2, id_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) != 0)) {
+                size += GeneratedMessageV3.computeStringSize(1, name_);
+            }
+            if (((bitField0_ & 0x00000002) != 0)) {
+                size +=  CodedOutputStream
+                        .computeInt32Size(2, id_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @Override
+        public boolean equals(final Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj instanceof Patriarch)) {
+                return super.equals(obj);
+            }
+            Patriarch other = (Patriarch) obj;
+
+            if (hasName() != other.hasName()) return false;
+            if (hasName()) {
+                if (!getName()
+                        .equals(other.getName())) return false;
+            }
+            if (hasId() != other.hasId()) return false;
+            if (hasId()) {
+                if (getId()
+                        != other.getId()) return false;
+            }
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (hasName()) {
+                hash = (37 * hash) + NAME_FIELD_NUMBER;
+                hash = (53 * hash) + getName().hashCode();
+            }
+            if (hasId()) {
+                hash = (37 * hash) + ID_FIELD_NUMBER;
+                hash = (53 * hash) + getId();
+            }
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static Patriarch parseFrom(
+                java.nio.ByteBuffer data)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static Patriarch parseFrom(
+                java.nio.ByteBuffer data,
+                 ExtensionRegistryLite extensionRegistry)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static Patriarch parseFrom(
+                 ByteString data)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static Patriarch parseFrom(
+                 ByteString data,
+                 ExtensionRegistryLite extensionRegistry)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static Patriarch parseFrom(byte[] data)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static Patriarch parseFrom(
+                byte[] data,
+                 ExtensionRegistryLite extensionRegistry)
+                throws  InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static Patriarch parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static Patriarch parseFrom(
+                java.io.InputStream input,
+                 ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Patriarch parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static Patriarch parseDelimitedFrom(
+                java.io.InputStream input,
+                 ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        public static Patriarch parseFrom(
+                 CodedInputStream input)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseWithIOException(PARSER, input);
+        }
+
+        public static Patriarch parseFrom(
+                 CodedInputStream input,
+                 ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return GeneratedMessageV3
+                    .parseWithIOException(PARSER, input, extensionRegistry);
+        }
+
+        @Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(Patriarch prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE
+                    ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @Override
+        protected Builder newBuilderForType(
+                BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code com.luban.protobuf.Patriarch}
+         */
+        public static final class Builder extends
+                GeneratedMessageV3.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.luban.protobuf.Patriarch)
+                PatriarchOrBuilder {
+            public static final  Descriptors.Descriptor
+            getDescriptor() {
+                return DataInfo.internal_static_com_luban_protobuf_Patriarch_descriptor;
+            }
+
+            @Override
+            protected FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return DataInfo.internal_static_com_luban_protobuf_Patriarch_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                Patriarch.class, Builder.class);
+            }
+
+            // Construct using com.luban.netty.sixdome.DataInfo.Patriarch.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (GeneratedMessageV3
+                        .alwaysUseFieldBuilders) {
+                }
+            }
+
+            @Override
+            public Builder clear() {
+                super.clear();
+                name_ = "";
+                bitField0_ = (bitField0_ & ~0x00000001);
+                id_ = 0;
+                bitField0_ = (bitField0_ & ~0x00000002);
+                return this;
+            }
+
+            @Override
+            public  Descriptors.Descriptor
+            getDescriptorForType() {
+                return DataInfo.internal_static_com_luban_protobuf_Patriarch_descriptor;
+            }
+
+            @Override
+            public Patriarch getDefaultInstanceForType() {
+                return Patriarch.getDefaultInstance();
+            }
+
+            @Override
+            public Patriarch build() {
+                Patriarch result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @Override
+            public Patriarch buildPartial() {
+                Patriarch result = new Patriarch(this);
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) != 0)) {
+                    to_bitField0_ |= 0x00000001;
+                }
+                result.name_ = name_;
+                if (((from_bitField0_ & 0x00000002) != 0)) {
+                    result.id_ = id_;
+                    to_bitField0_ |= 0x00000002;
+                }
+                result.bitField0_ = to_bitField0_;
+                onBuilt();
+                return result;
+            }
+
+            @Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @Override
+            public Builder setField(
+                     Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.setField(field, value);
+            }
+
+            @Override
+            public Builder clearField(
+                     Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @Override
+            public Builder clearOneof(
+                     Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @Override
+            public Builder setRepeatedField(
+                     Descriptors.FieldDescriptor field,
+                    int index, Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @Override
+            public Builder addRepeatedField(
+                     Descriptors.FieldDescriptor field,
+                    Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @Override
+            public Builder mergeFrom( Message other) {
+                if (other instanceof Patriarch) {
+                    return mergeFrom((Patriarch) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(Patriarch other) {
+                if (other == Patriarch.getDefaultInstance()) return this;
+                if (other.hasName()) {
+                    bitField0_ |= 0x00000001;
+                    name_ = other.name_;
+                    onChanged();
+                }
+                if (other.hasId()) {
+                    setId(other.getId());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @Override
+            public Builder mergeFrom(
+                     CodedInputStream input,
+                     ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                Patriarch parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch ( InvalidProtocolBufferException e) {
+                    parsedMessage = (Patriarch) e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int bitField0_;
+
+            private Object name_ = "";
+
+            /**
+             * <code>optional string name = 1;</code>
+             */
+            public boolean hasName() {
+                return ((bitField0_ & 0x00000001) != 0);
+            }
+
+            /**
+             * <code>optional string name = 1;</code>
+             */
+            public String getName() {
+                Object ref = name_;
+                if (!(ref instanceof String)) {
+                     ByteString bs =
+                            ( ByteString) ref;
+                    String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        name_ = s;
+                    }
+                    return s;
+                } else {
+                    return (String) ref;
+                }
+            }
+
+            /**
+             * <code>optional string name = 1;</code>
+             */
+            public  ByteString
+            getNameBytes() {
+                Object ref = name_;
+                if (ref instanceof String) {
+                     ByteString b =
+                             ByteString.copyFromUtf8(
+                                    (String) ref);
+                    name_ = b;
+                    return b;
+                } else {
+                    return ( ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string name = 1;</code>
+             */
+            public Builder setName(
+                    String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                name_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string name = 1;</code>
+             */
+            public Builder clearName() {
+                bitField0_ = (bitField0_ & ~0x00000001);
+                name_ = getDefaultInstance().getName();
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string name = 1;</code>
+             */
+            public Builder setNameBytes(
+                     ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                name_ = value;
+                onChanged();
+                return this;
+            }
+
+            private int id_;
+
+            /**
+             * <code>optional int32 id = 2;</code>
+             */
+            public boolean hasId() {
+                return ((bitField0_ & 0x00000002) != 0);
+            }
+
+            /**
+             * <code>optional int32 id = 2;</code>
+             */
+            public int getId() {
+                return id_;
+            }
+
+            /**
+             * <code>optional int32 id = 2;</code>
+             */
+            public Builder setId(int value) {
+                bitField0_ |= 0x00000002;
+                id_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional int32 id = 2;</code>
+             */
+            public Builder clearId() {
+                bitField0_ = (bitField0_ & ~0x00000002);
+                id_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override
+            public final Builder setUnknownFields(
+                    final  UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @Override
+            public final Builder mergeUnknownFields(
+                    final  UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
 
 
-      // @@protoc_insertion_point(builder_scope:com.luban.protobuf.Patriarch)
+            // @@protoc_insertion_point(builder_scope:com.luban.protobuf.Patriarch)
+        }
+
+        // @@protoc_insertion_point(class_scope:com.luban.protobuf.Patriarch)
+        private static final Patriarch DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE = new Patriarch();
+        }
+
+        public static Patriarch getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        @Deprecated
+        public static final  Parser<Patriarch>
+                PARSER = new  AbstractParser<Patriarch>() {
+            @Override
+            public Patriarch parsePartialFrom(
+                     CodedInputStream input,
+                     ExtensionRegistryLite extensionRegistry)
+                    throws  InvalidProtocolBufferException {
+                return new Patriarch(input, extensionRegistry);
+            }
+        };
+
+        public static  Parser<Patriarch> parser() {
+            return PARSER;
+        }
+
+        @Override
+        public  Parser<Patriarch> getParserForType() {
+            return PARSER;
+        }
+
+        @Override
+        public Patriarch getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
+
     }
 
-    // @@protoc_insertion_point(class_scope:com.luban.protobuf.Patriarch)
-    private static final Patriarch DEFAULT_INSTANCE;
+    private static final  Descriptors.Descriptor
+            internal_static_com_luban_protobuf_MyObject_descriptor;
+    private static final
+    GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_luban_protobuf_MyObject_fieldAccessorTable;
+    private static final  Descriptors.Descriptor
+            internal_static_com_luban_protobuf_Student_descriptor;
+    private static final
+    GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_luban_protobuf_Student_fieldAccessorTable;
+    private static final  Descriptors.Descriptor
+            internal_static_com_luban_protobuf_Teacher_descriptor;
+    private static final
+    GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_luban_protobuf_Teacher_fieldAccessorTable;
+    private static final  Descriptors.Descriptor
+            internal_static_com_luban_protobuf_Patriarch_descriptor;
+    private static final
+    GeneratedMessageV3.FieldAccessorTable
+            internal_static_com_luban_protobuf_Patriarch_fieldAccessorTable;
+
+    public static  Descriptors.FileDescriptor
+    getDescriptor() {
+        return descriptor;
+    }
+
+    private static  Descriptors.FileDescriptor
+            descriptor;
+
     static {
-      DEFAULT_INSTANCE = new Patriarch();
+        String[] descriptorData = {
+                "\n\rpersons.proto\022\022com.luban.protobuf\"\245\002\n\010" +
+                        "MyObject\0228\n\tdata_type\030\001 \002(\0162%.com.luban." +
+                        "protobuf.MyObject.DataType\022.\n\007student\030\002 " +
+                        "\001(\0132\033.com.luban.protobuf.StudentH\000\022.\n\007te" +
+                        "acher\030\003 \001(\0132\033.com.luban.protobuf.Teacher" +
+                        "H\000\0222\n\tpatriarch\030\004 \001(\0132\035.com.luban.protob" +
+                        "uf.PatriarchH\000\"?\n\010DataType\022\017\n\013StudentTyp" +
+                        "e\020\000\022\017\n\013TeacherType\020\001\022\021\n\rPatriarchType\020\002B" +
+                        "\n\n\010DataBody\"5\n\007Student\022\014\n\004name\030\001 \001(\t\022\013\n\003" +
+                        "age\030\002 \001(\005\022\017\n\007address\030\003 \001(\t\"2\n\007Teacher\022\014\n" +
+                        "\004name\030\001 \001(\t\022\013\n\003age\030\002 \001(\005\022\014\n\004duty\030\003 \001(\t\"%" +
+                        "\n\tPatriarch\022\014\n\004name\030\001 \001(\t\022\n\n\002id\030\002 \001(\005B#\n" +
+                        "\027com.luban.netty.sixdomeB\010DataInfo"
+        };
+        descriptor =  Descriptors.FileDescriptor
+                .internalBuildGeneratedFileFrom(descriptorData,
+                        new  Descriptors.FileDescriptor[]{
+                        });
+        internal_static_com_luban_protobuf_MyObject_descriptor =
+                getDescriptor().getMessageTypes().get(0);
+        internal_static_com_luban_protobuf_MyObject_fieldAccessorTable = new
+                GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_luban_protobuf_MyObject_descriptor,
+                new String[]{"DataType", "Student", "Teacher", "Patriarch", "DataBody",});
+        internal_static_com_luban_protobuf_Student_descriptor =
+                getDescriptor().getMessageTypes().get(1);
+        internal_static_com_luban_protobuf_Student_fieldAccessorTable = new
+                GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_luban_protobuf_Student_descriptor,
+                new String[]{"Name", "Age", "Address",});
+        internal_static_com_luban_protobuf_Teacher_descriptor =
+                getDescriptor().getMessageTypes().get(2);
+        internal_static_com_luban_protobuf_Teacher_fieldAccessorTable = new
+                GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_luban_protobuf_Teacher_descriptor,
+                new String[]{"Name", "Age", "Duty",});
+        internal_static_com_luban_protobuf_Patriarch_descriptor =
+                getDescriptor().getMessageTypes().get(3);
+        internal_static_com_luban_protobuf_Patriarch_fieldAccessorTable = new
+                GeneratedMessageV3.FieldAccessorTable(
+                internal_static_com_luban_protobuf_Patriarch_descriptor,
+                new String[]{"Name", "Id",});
     }
 
-    public static Patriarch getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    @Deprecated public static final com.google.protobuf.Parser<Patriarch>
-        PARSER = new com.google.protobuf.AbstractParser<Patriarch>() {
-      @Override
-      public Patriarch parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Patriarch(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Patriarch> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<Patriarch> getParserForType() {
-      return PARSER;
-    }
-
-    @Override
-    public Patriarch getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_luban_protobuf_MyObject_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_luban_protobuf_MyObject_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_luban_protobuf_Student_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_luban_protobuf_Student_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_luban_protobuf_Teacher_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_luban_protobuf_Teacher_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_luban_protobuf_Patriarch_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_luban_protobuf_Patriarch_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    String[] descriptorData = {
-      "\n\rpersons.proto\022\022com.luban.protobuf\"\245\002\n\010" +
-      "MyObject\0228\n\tdata_type\030\001 \002(\0162%.com.luban." +
-      "protobuf.MyObject.DataType\022.\n\007student\030\002 " +
-      "\001(\0132\033.com.luban.protobuf.StudentH\000\022.\n\007te" +
-      "acher\030\003 \001(\0132\033.com.luban.protobuf.Teacher" +
-      "H\000\0222\n\tpatriarch\030\004 \001(\0132\035.com.luban.protob" +
-      "uf.PatriarchH\000\"?\n\010DataType\022\017\n\013StudentTyp" +
-      "e\020\000\022\017\n\013TeacherType\020\001\022\021\n\rPatriarchType\020\002B" +
-      "\n\n\010DataBody\"5\n\007Student\022\014\n\004name\030\001 \001(\t\022\013\n\003" +
-      "age\030\002 \001(\005\022\017\n\007address\030\003 \001(\t\"2\n\007Teacher\022\014\n" +
-      "\004name\030\001 \001(\t\022\013\n\003age\030\002 \001(\005\022\014\n\004duty\030\003 \001(\t\"%" +
-      "\n\tPatriarch\022\014\n\004name\030\001 \001(\t\022\n\n\002id\030\002 \001(\005B#\n" +
-      "\027com.luban.netty.sixdomeB\010DataInfo"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_com_luban_protobuf_MyObject_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_com_luban_protobuf_MyObject_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_luban_protobuf_MyObject_descriptor,
-        new String[] { "DataType", "Student", "Teacher", "Patriarch", "DataBody", });
-    internal_static_com_luban_protobuf_Student_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_com_luban_protobuf_Student_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_luban_protobuf_Student_descriptor,
-        new String[] { "Name", "Age", "Address", });
-    internal_static_com_luban_protobuf_Teacher_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_com_luban_protobuf_Teacher_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_luban_protobuf_Teacher_descriptor,
-        new String[] { "Name", "Age", "Duty", });
-    internal_static_com_luban_protobuf_Patriarch_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_com_luban_protobuf_Patriarch_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_luban_protobuf_Patriarch_descriptor,
-        new String[] { "Name", "Id", });
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }
