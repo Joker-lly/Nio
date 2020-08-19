@@ -1,6 +1,7 @@
 package com.luban.pool;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Semaphore;
 
@@ -18,6 +19,11 @@ public class Demo1_Executor implements Executor{
 		// 组合
 		semaphore.acquire(); // 占坑
 		semaphore.release();// 释放
+
+		// 用法与 CountDownLatch 相反
+		CyclicBarrier cyclicBarrier = new CyclicBarrier(2);
+
+
 
 	}
 
